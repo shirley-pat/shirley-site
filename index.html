@@ -1,0 +1,2783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shirley Patrick · CRO & Growth Portfolio 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sys: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --primary: #FFF48D;
+      --primary-dark: #E8DC6A;
+      --primary-light: rgba(255,244,141,0.12);
+      --win: #16A34A;
+      --win-light: #DCFCE7;
+      --loss: #DC2626;
+      --loss-light: #FEE2E2;
+      --learning: #D97706;
+      --learning-light: #FEF3C7;
+      --mixed: #7C3AED;
+      --mixed-light: #EDE9FE;
+      --dark: #0a0a0a;
+      --dark2: #2E2D2D;
+      --bg: #0a0a0a;
+      --card: #2E2D2D;
+      --text: #F5F3EE;
+      --muted: rgba(245,243,238,0.5);
+      --border: rgba(245,243,238,0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(29,28,28,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(245,243,238,0.08);
+      height: 72px;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+    }
+    .nav-inner {
+      max-width: 1320px; margin: 0 auto;
+      height: 100%; padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 18px; text-decoration: none; color: var(--text); letter-spacing: -0.01em; }
+    .nav-logo em { color: var(--primary); font-style: normal; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      display: flex; align-items: center; gap: 8px;
+      background: #FFF48D;
+      color: #1D1C1C;
+      padding: 9px 22px; border-radius: 100px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      transition: all .2s;
+      box-shadow: 0 4px 16px rgba(255,244,141,0.2);
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,244,141,0.3); }
+    .pulse { width: 7px; height: 7px; border-radius: 50%; background: #FFF48D; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.85)} }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero-wrap {
+      background: #0a0a0a;
+      border-bottom: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-wrap::before {
+      content: '';
+      position: absolute;
+      width: 900px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,244,141,0.08) 0%, transparent 65%);
+      top: -300px; right: -100px; pointer-events: none;
+    }
+    .hero-wrap::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,244,141,0.04) 0%, transparent 65%);
+      bottom: -200px; left: -100px; pointer-events: none;
+    }
+    .hero {
+      max-width: 1320px; margin: 0 auto; padding: 100px 40px 96px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,244,141,0.12);
+      color: #60A5FA;
+      border: 1px solid rgba(255,244,141,0.25);
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 800;
+      font-size: 68px; line-height: 1.04;
+      color: #ffffff; margin-bottom: 24px;
+      letter-spacing: -0.025em;
+    }
+    .hero h1 em {
+      color: #FFF48D; -webkit-text-fill-color: #FFF48D; font-style: normal;
+    }
+    .hero-sub { font-size: 18px; color: rgba(255,255,255,0.62); line-height: 1.75; margin-bottom: 40px; }
+    .hero-btns { display: flex; gap: 16px; align-items: center; }
+    .btn-p {
+      background: #FFF48D;
+      color: #1D1C1C;
+      padding: 14px 32px; border-radius: 12px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: all .25s;
+      box-shadow: 0 4px 20px rgba(255,244,141,0.2);
+      letter-spacing: -0.01em;
+    }
+    .btn-p:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(255,244,141,0.3); }
+    .btn-s { color: rgba(255,255,255,0.65); font-size: 15px; font-weight: 600; text-decoration: none; transition: color .2s; }
+    .btn-s:hover { color: #fff; text-decoration: underline; }
+
+    .hero-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .metric-card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 20px; padding: 32px 28px;
+      border: 1px solid rgba(255,255,255,0.09);
+      transition: transform .3s, box-shadow .3s, border-color .3s, background .3s;
+      backdrop-filter: blur(12px);
+    }
+    .metric-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.4); border-color: rgba(255,244,141,0.25); background: rgba(255,255,255,0.07); }
+    .metric-num {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 52px;
+      color: #FFF48D; -webkit-text-fill-color: #FFF48D; line-height: 1; margin-bottom: 8px;
+    }
+    .metric-label { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 500; line-height: 1.4; }
+
+    /* ── SHARED SECTION LAYOUT ────────────────────────── */
+    .section { padding: 88px 40px; }
+    .section-inner { max-width: 1320px; margin: 0 auto; }
+    .s-tag { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 12px; }
+    .s-title { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: clamp(44px,6.5vw,96px); color: var(--text); -webkit-text-fill-color: var(--text); margin-bottom: 1.5rem; line-height: .92; letter-spacing: .01em; }
+    .s-sub { font-size: 18px; color: var(--muted); line-height: 1.65; max-width: 600px; margin-bottom: 56px; }
+
+    /* ── METHOD ──────────────────────────────────────── */
+    .method-wrap {
+      background: #0a0a0a;
+      position: relative; overflow: hidden;
+    }
+    .method-wrap::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255,244,141,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .method-wrap .s-tag { color: #FFF48D; }
+    .method-wrap .s-title { color: #fff; }
+    .method-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 56px; gap: 40px; }
+    .method-intro { font-size: 17px; color: rgba(255,255,255,.45); line-height: 1.75; max-width: 480px; }
+    .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+    .method-step {
+      background: rgba(255,255,255,.04); padding: 40px 32px;
+      position: relative; overflow: hidden;
+      transition: background .3s, box-shadow .3s;
+      border: 1px solid rgba(255,255,255,.05);
+    }
+    .method-step:first-child { border-radius: 20px 3px 3px 20px; }
+    .method-step:last-child  { border-radius: 3px 20px 20px 3px; }
+    .method-step:hover { background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,244,141,.2); }
+    .step-bg { font-family: 'Space Grotesk', sans-serif; font-size: 100px; font-weight: 800; color: rgba(255,255,255,.04); position: absolute; bottom: -10px; right: 10px; line-height: 1; pointer-events: none; }
+    .step-pill { display: inline-block; background: #FFF48D; color: #1D1C1C; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 6px; margin-bottom: 20px; letter-spacing: .06em; }
+    .step-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; color: #fff; margin-bottom: 16px; }
+    .step-desc { font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.65; }
+
+    /* ── SURFACES ─────────────────────────────────────── */
+    .surfaces-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .surf-card {
+      background: var(--card); border-radius: 18px; padding: 28px 24px;
+      border: 1px solid var(--border);
+      transition: all .25s; cursor: default;
+    }
+    .surf-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,244,141,.08); }
+    .surf-num { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 10px; letter-spacing: .06em; }
+    .surf-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+    .surf-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── CASE STUDIES ─────────────────────────────────── */
+    .cs-wrap { background: #171717; }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 40px; }
+    .fbtn {
+      padding: 8px 18px; border-radius: 100px;
+      font-size: 13px; font-weight: 600;
+      border: 2px solid var(--border); background: var(--card); color: var(--muted);
+      cursor: pointer; transition: all .2s;
+    }
+    .fbtn:hover { border-color: var(--primary); color: var(--primary); }
+    .fbtn.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .gap { flex: 1; }
+    .rbtn {
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 700;
+      border: 2px solid transparent; cursor: pointer; transition: all .2s;
+    }
+    .rbtn-win   { background: var(--win-light);      color: var(--win);      border-color: #d0f5e4; }
+    .rbtn-loss  { background: var(--loss-light);     color: var(--loss);     border-color: #fbd6db; }
+    .rbtn-learn { background: var(--learning-light); color: #c07a00;         border-color: #ffe5b0; }
+    .rbtn-win.on   { background: var(--win);      color: #fff; border-color: var(--win); }
+    .rbtn-loss.on  { background: var(--loss);     color: #fff; border-color: var(--loss); }
+    .rbtn-learn.on { background: var(--learning); color: #fff; border-color: var(--learning); }
+
+    .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .cs-card {
+      background: var(--card); border-radius: 22px; overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transition: all .3s; cursor: pointer;
+    }
+    .cs-card:hover { transform: translateY(-7px); box-shadow: 0 28px 56px rgba(0,0,0,.4); border-color: rgba(255,244,141,.2); }
+    .cs-card.hide { display: none; }
+
+    /* image zone */
+    .cs-img-zone { position: relative; overflow: hidden; background: #e8edf8; flex-shrink: 0; }
+    .cs-img-zone img { width: 100%; height: 270px; object-fit: cover; object-position: top center; transition: transform .5s; }
+    .cs-card:hover .cs-img-zone img { transform: scale(1.04); }
+    .cs-no-img { height: 180px; background: linear-gradient(135deg, rgba(255,244,141,.1) 0%, rgba(255,244,141,.04) 100%); display: flex; align-items: center; justify-content: center; font-size: 40px; }
+
+    /* floating labels on image */
+    .cs-section-pill {
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(6,10,26,0.65); backdrop-filter: blur(6px);
+      color: rgba(255,255,255,.9); font-size: 10px; font-weight: 700;
+      padding: 4px 10px; border-radius: 6px; letter-spacing: .07em; text-transform: uppercase;
+    }
+    .cs-badge {
+      position: absolute; top: 14px; right: 14px;
+      font-size: 11px; font-weight: 700; padding: 5px 13px; border-radius: 100px;
+      letter-spacing: .05em;
+    }
+    .badge-win      { background: var(--win);      color: #fff; }
+    .badge-loss     { background: var(--loss);     color: #fff; }
+    .badge-learning { background: var(--learning); color: #fff; }
+    .badge-mixed    { background: var(--mixed);    color: #fff; }
+    .badge-pending  { background: #9CA3AF;          color: #fff; }
+
+    /* card body */
+    .cs-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .cs-meta { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: .09em; text-transform: uppercase; margin-bottom: 6px; }
+    .cs-title { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 1.55rem; letter-spacing: .02em; line-height: 1.1; margin-bottom: 10px; }
+    .cs-hypo { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 18px; font-style: italic; }
+
+    .cs-metrics { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .cs-metric { background: var(--bg); border-radius: 10px; padding: 10px 14px; flex: 1; min-width: 72px; }
+    .cs-mv { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 2.2rem; letter-spacing: .02em; line-height: 1; }
+    .cs-ml { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-top: 3px; }
+    .pos { color: var(--win); }
+    .neg { color: var(--loss); }
+
+    .cs-insight { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+    .cs-il { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+    .cs-it { font-size: 13px; line-height: 1.55; color: var(--text); }
+
+    /* ── LIGHTBOX ─────────────────────────────────────── */
+    .lb-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(6,10,26,.92); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+      padding: 20px;
+    }
+    .lb-overlay.open { opacity: 1; pointer-events: all; }
+    .lb-box {
+      background: var(--card); border-radius: 24px;
+      max-width: 1200px; width: 100%; max-height: 90vh;
+      overflow-y: auto; padding: 48px; position: relative;
+      transform: translateY(24px); transition: transform .3s;
+    }
+    .lb-overlay.open .lb-box { transform: translateY(0); }
+    .lb-close {
+      position: absolute; top: 20px; right: 20px;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg); border: 1px solid var(--border);
+      cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;
+      transition: background .2s; z-index: 10;
+    }
+    .lb-close:hover { background: var(--border); }
+    .lb-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
+      color: #fff; font-size: 22px; cursor: pointer;
+      align-items: center; justify-content: center;
+      transition: all .2s; z-index: 600;
+      backdrop-filter: blur(6px);
+      display: none;
+    }
+    .lb-overlay.open .lb-nav { display: flex; }
+    .lb-nav:hover:not(:disabled) { background: rgba(255,255,255,0.22); transform: translateY(-50%) scale(1.08); }
+    .lb-nav:disabled { opacity: 0.25; cursor: default; }
+    .lb-prev { left: 24px; }
+    .lb-next { right: 24px; }
+    .lb-counter {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 500;
+      letter-spacing: .06em; z-index: 600; pointer-events: none;
+    }
+    .lb-img { width: 100%; border-radius: 14px; margin-bottom: 28px; border: 1px solid var(--border); }
+    .lb-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .lb-title { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: clamp(32px,3.5vw,48px); line-height: .92; letter-spacing: .01em; margin-bottom: 12px; }
+    .lb-hypo { font-size: 15px; color: var(--muted); font-style: italic; line-height: 1.65; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .lb-table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+    .lb-table th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 2px solid var(--border); background: var(--bg); }
+    .lb-table th:not(:first-child) { text-align: right; }
+    .lb-table td { padding: 12px 14px; font-size: 14px; border-bottom: 1px solid var(--border); }
+    .lb-table td:not(:first-child) { text-align: right; }
+    .lb-table tr:last-child td { border-bottom: none; }
+    .lb-insight { background: var(--bg); border-radius: 14px; padding: 24px; }
+    .lb-il { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 8px; }
+    .lb-it { font-size: 15px; line-height: 1.65; }
+
+    /* ── PATTERNS ─────────────────────────────────────── */
+    .patterns-grid { display: grid; grid-template-columns: 5fr 3fr; gap: 48px; }
+    .pat-col-h { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 1.45rem; letter-spacing: .02em; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+    .pat-card {
+      background: var(--card); border-radius: 16px; padding: 24px 24px 24px 28px;
+      margin-bottom: 14px; border: 1px solid var(--border);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .pat-card:hover { transform: translateX(4px); box-shadow: 4px 0 20px rgba(255,244,141,.07); }
+    .pat-card.works  { border-left: 4px solid var(--win); }
+    .pat-card.doesnt { border-left: 4px solid var(--loss); }
+    .pat-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 4px; }
+    .pat-title { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 1.45rem; letter-spacing: .02em; line-height: 1.15; margin-bottom: 5px; }
+    .pat-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ── CONTACT ──────────────────────────────────────── */
+    .contact-wrap {
+      background: #0a0a0a;
+      position: relative; overflow: hidden;
+    }
+    .contact-wrap::before {
+      content: ''; position: absolute;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,244,141,0.06) 0%, transparent 60%);
+      top: -200px; right: -100px; pointer-events: none;
+    }
+    .contact-inner {
+      max-width: 1320px; margin: 0 auto; padding: 100px 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .c-tag { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #FFF48D; margin-bottom: 16px; }
+    .c-title { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: clamp(52px,8.5vw,110px); color: #fff; -webkit-text-fill-color: #fff; line-height: .92; margin-bottom: 20px; letter-spacing: .01em; }
+    .c-sub { font-size: 17px; color: rgba(255,255,255,.45); line-height: 1.75; }
+    .c-cards { display: flex; flex-direction: column; gap: 16px; }
+    .c-card {
+      display: flex; align-items: center; gap: 18px;
+      background: rgba(255,255,255,.05); border-radius: 18px;
+      padding: 24px 28px; border: 1px solid rgba(255,255,255,.07);
+      text-decoration: none; color: #fff; transition: background .2s;
+    }
+    .c-card:hover { background: rgba(255,255,255,.09); border-color: rgba(255,244,141,.25); transform: translateX(4px); }
+    .c-icon { width: 48px; height: 48px; border-radius: 14px; background: #FFF48D; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .c-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.35); margin-bottom: 4px; }
+    .c-val { font-size: 16px; font-weight: 600; }
+    .footer { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,.04); padding: 24px 40px; text-align: center; }
+    .footer p { font-size: 13px; color: rgba(255,255,255,.2); }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; gap: 48px; }
+      .method-grid { grid-template-columns: 1fr 1fr; }
+      .method-step:first-child { border-radius: 20px 3px 3px 3px; }
+      .method-step:last-child  { border-radius: 3px 3px 20px 3px; }
+      .surfaces-grid { grid-template-columns: repeat(3, 1fr); }
+      .cs-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px 48px; }
+      .hero h1 { font-size: 38px; }
+      .hero-metrics { grid-template-columns: 1fr 1fr; }
+      .section { padding: 60px 20px; }
+      .method-top { flex-direction: column; gap: 20px; }
+      .method-grid { grid-template-columns: 1fr; }
+      .method-step:first-child, .method-step:last-child { border-radius: 16px; }
+      .surfaces-grid { grid-template-columns: 1fr 1fr; }
+      .cs-grid { grid-template-columns: 1fr; }
+      .patterns-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; padding: 60px 20px; }
+      .c-title { font-size: 36px; }
+      .lb-box { padding: 28px 20px; }
+    }
+  
+    /* ── CURSOR ─────────────────────────────────────── */
+    body { cursor: none; }
+    #cur {
+      position: fixed; width: 10px; height: 10px;
+      background: var(--primary); border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: width .2s, height .2s;
+      mix-blend-mode: difference;
+    }
+    #cur.big { width: 36px; height: 36px; }
+
+    /* ── HERO (portfolio.html exact) ────────────────── */
+    .hero-wrap { display: none !important; }
+    .hero {
+      min-height: 100vh !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      padding: 0 3rem 5rem !important;
+      position: relative !important;
+      overflow: hidden !important;
+      background: var(--bg) !important;
+      max-width: none !important;
+      margin: 0 !important;
+      gap: 0 !important;
+    }
+    .hero-watermark {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      font-family: 'Space Grotesk', sans-serif; font-size: clamp(100px,20vw,300px);
+      color: transparent; -webkit-text-stroke: 1px rgba(255,244,141,.06);
+      white-space: nowrap; pointer-events: none; user-select: none; letter-spacing: .02em;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+      font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--primary); opacity: .75;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--primary); }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(60px,10vw,148px) !important;
+      line-height: .9 !important; letter-spacing: .01em !important;
+      color: var(--text) !important; max-width: 860px !important;
+      margin-bottom: 3.5rem !important; -webkit-text-fill-color: var(--text) !important;
+    }
+    .hero h1 em { font-style: normal; color: var(--primary); -webkit-text-fill-color: var(--primary); }
+    .hero-row {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .hero-sub {
+      max-width: 440px; font-size: .92rem; line-height: 1.75;
+      color: rgba(245,243,238,.55);
+    }
+    .hero-btns { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+    .btn-y {
+      font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .12em;
+      text-transform: uppercase; padding: .9rem 2rem; text-decoration: none;
+      background: var(--primary); color: #1D1C1C; border: 1px solid var(--primary);
+      transition: all .25s;
+    }
+    .btn-y:hover { background: transparent; color: var(--primary); }
+    .btn-g {
+      font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .12em;
+      text-transform: uppercase; padding: .9rem 2rem; text-decoration: none;
+      background: transparent; color: rgba(245,243,238,.6);
+      border: 1px solid rgba(245,243,238,.2); transition: all .25s;
+    }
+    .btn-g:hover { border-color: var(--text); color: var(--text); }
+    .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; }
+    .stat { text-align: right; }
+    .stat-n {
+      font-family: 'Space Grotesk', sans-serif; font-size: 3.2rem;
+      color: var(--primary); line-height: 1; letter-spacing: .02em; display: block;
+    }
+    .stat-l {
+      font-family: 'DM Mono', monospace; font-size: .62rem; letter-spacing: .16em;
+      text-transform: uppercase; color: rgba(245,243,238,.35); display: block; margin-top: .3rem;
+    }
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .5rem; opacity: .3;
+    }
+    .scroll-hint span { font-family: 'DM Mono', monospace; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; }
+    .scroll-bar {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--text), transparent);
+      animation: sb 1.8s ease-in-out infinite;
+    }
+    @keyframes sb {
+      0%  { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100%{ transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ── MARQUEE ─────────────────────────────────────── */
+    .mq-wrap {
+      overflow: hidden; border-top: 1px solid rgba(245,243,238,.07);
+      border-bottom: 1px solid rgba(245,243,238,.07);
+      padding: 1.1rem 0; background: #2E2D2D;
+    }
+    .mq-track {
+      display: flex; gap: 2.5rem; white-space: nowrap;
+      animation: mq 28s linear infinite;
+    }
+    @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .mq-item {
+      font-family: 'Space Grotesk', sans-serif; font-size: .95rem; letter-spacing: .14em;
+      color: rgba(245,243,238,.22); flex-shrink: 0;
+    }
+    .mq-dot { color: var(--primary); opacity: .5; }
+
+    /* ── NAV overrides for portfolio style ──────────── */
+    nav {
+      display: flex !important; justify-content: space-between !important; align-items: center !important;
+      padding: 1.5rem 3rem !important;
+      background: rgba(29,28,28,0.95) !important; backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid rgba(245,243,238,0.08) !important;
+      height: auto !important; box-shadow: none !important;
+    }
+    .nav-inner { display: contents !important; }
+    .nav-links { display: flex !important; gap: 2.5rem !important; }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 1.1rem !important; letter-spacing: -0.02em !important;
+      color: var(--text) !important; font-weight: 700 !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    .nav-logo em {
+      color: var(--primary) !important;
+      -webkit-text-fill-color: var(--primary) !important;
+      font-style: normal !important; opacity: 1 !important;
+    }
+    .nav-links a { font-family: 'DM Mono', monospace !important; font-size: .7rem !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: rgba(245,243,238,.5) !important; }
+    .nav-links a:hover { color: var(--text) !important; }
+    .nav-cta {
+      font-family: 'DM Mono', monospace !important; font-size: .7rem !important;
+      letter-spacing: .12em !important; text-transform: uppercase !important;
+      padding: .55rem 1.4rem !important; border-radius: 0 !important;
+      border: 1px solid var(--primary) !important;
+      background: transparent !important; color: var(--primary) !important;
+      box-shadow: none !important; display: inline-flex !important;
+      align-items: center !important; width: auto !important;
+    }
+    .nav-cta:hover { background: var(--primary) !important; color: #1D1C1C !important; }
+    .pulse { display: none !important; }
+
+  
+    /* ── SECTION LABELS & H2 (portfolio.html style) ──── */
+    .sec-label {
+      font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--primary); opacity: .75;
+      margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem;
+    }
+    .sec-label::before { content: attr(data-n); opacity: .35; }
+    .sec-h2 {
+      font-family: 'Space Grotesk', sans-serif !important; font-weight: 400 !important;
+      font-size: clamp(44px,6.5vw,96px) !important; line-height: .92 !important;
+      letter-spacing: .01em !important; color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .sec-h2 em { font-style: normal; color: var(--primary); -webkit-text-fill-color: var(--primary); }
+    .method-intro-p { font-size: .92rem; line-height: 1.75; color: rgba(245,243,238,.5); max-width: 560px; margin-top: 1rem; margin-bottom: 4rem; }
+    .surfaces-intro-p { font-size: .92rem; line-height: 1.75; color: rgba(245,243,238,.5); max-width: 480px; margin-top: 1rem; margin-bottom: 4rem; }
+
+    /* ── METHOD GRID (portfolio.html style) ─────────── */
+    .m-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: rgba(245,243,238,.07);
+    }
+    .m-step-p {
+      background: var(--bg); padding: 3rem 2.5rem;
+      position: relative; overflow: hidden; transition: background .25s;
+    }
+    .m-step-p:hover { background: var(--card); }
+    .m-num-p {
+      position: absolute; top: 1.5rem; right: 2rem;
+      font-family: 'Space Grotesk', sans-serif; font-size: 5rem;
+      color: rgba(255,244,141,.08); line-height: 1; pointer-events: none;
+    }
+    .m-tag-p {
+      font-family: 'DM Mono', monospace; font-size: .62rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--primary); opacity: .6; margin-bottom: .6rem;
+    }
+    .m-title-p {
+      font-family: 'Space Grotesk', sans-serif; font-size: 2rem; letter-spacing: .03em;
+      color: var(--text); margin-bottom: .75rem; -webkit-text-fill-color: var(--text);
+    }
+    .m-body-p { font-size: .85rem; line-height: 1.75; color: rgba(245,243,238,.5); max-width: 300px; }
+
+    /* ── SURFACES GRID (portfolio.html style) ───────── */
+    .surf-grid-p {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(245,243,238,.07); margin-top: 0;
+    }
+    .surf-tile-p {
+      background: var(--bg); padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; gap: .6rem; transition: background .25s;
+    }
+    .surf-tile-p:hover { background: var(--card); }
+    .surf-id-p {
+      font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(245,243,238,.3);
+    }
+    .surf-name-p {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; letter-spacing: .03em;
+      color: var(--text); -webkit-text-fill-color: var(--text);
+    }
+    .surf-note-p { font-size: .78rem; color: rgba(245,243,238,.4); line-height: 1.5; }
+
+    /* ── METHOD/SURFACES SECTION WRAP ───────────────── */
+    .method-wrap-p { background: var(--bg); padding: 7rem 3rem; border-top: 1px solid rgba(245,243,238,.07); }
+    .surfaces-wrap-p { padding: 7rem 3rem; border-top: 1px solid rgba(245,243,238,.07); }
+
+  
+    /* ══ EXACT HEADLINE RULES FROM portfolio.html ══════════════════ */
+    /* Bebas Neue has one weight — strip all font-weight overrides     */
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 1.5rem !important; letter-spacing: .1em !important;
+      font-weight: 400 !important;
+    }
+    .hero-watermark {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(100px,20vw,300px) !important;
+      letter-spacing: .02em !important; font-weight: 400 !important;
+    }
+    .hero h1, section.hero h1 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(60px,10vw,148px) !important;
+      line-height: .9 !important; letter-spacing: .01em !important;
+      font-weight: 400 !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    .hero h1 em { color: var(--primary) !important; -webkit-text-fill-color: var(--primary) !important; font-style: normal !important; }
+    .stat-n {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 3.2rem !important; line-height: 1 !important;
+      letter-spacing: .02em !important; font-weight: 400 !important;
+    }
+    .sec-h2, h2.sec-h2 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(44px,6.5vw,96px) !important;
+      line-height: .92 !important; letter-spacing: .01em !important;
+      font-weight: 400 !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    .sec-h2 em { color: var(--primary) !important; -webkit-text-fill-color: var(--primary) !important; font-style: normal !important; }
+    .m-num-p {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 5rem !important; font-weight: 400 !important;
+    }
+    .m-title-p {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 2rem !important; letter-spacing: .03em !important;
+      font-weight: 400 !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    .surf-name-p {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 1.5rem !important; letter-spacing: .03em !important;
+      font-weight: 400 !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    .cs-title {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 1.55rem !important; letter-spacing: .02em !important;
+      line-height: 1.1 !important; font-weight: 400 !important;
+    }
+    .cs-mv {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 2.2rem !important; letter-spacing: .02em !important;
+      line-height: 1 !important; font-weight: 400 !important;
+    }
+    .lb-title {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(32px,3.5vw,48px) !important;
+      line-height: .92 !important; letter-spacing: .01em !important;
+      font-weight: 400 !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    .c-title {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(52px,8.5vw,110px) !important;
+      line-height: .92 !important; letter-spacing: .01em !important;
+      font-weight: 400 !important; color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+    }
+    .c-title em { color: var(--primary) !important; -webkit-text-fill-color: var(--primary) !important; font-style: normal !important; }
+    /* ══════════════════════════════════════════════════════════════ */
+
+  
+    /* ══ FILTER BUTTONS — exact portfolio.html style ═══════════ */
+    .filter-row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-bottom: 40px; }
+    .fbtn {
+      font-family: 'DM Mono', monospace !important; font-size: .62rem !important;
+      letter-spacing: .12em !important; text-transform: uppercase !important;
+      padding: .45rem 1rem !important; border-radius: 0 !important;
+      border: 1px solid rgba(245,243,238,.18) !important;
+      background: transparent !important; color: rgba(245,243,238,.45) !important;
+      cursor: none !important; transition: all .2s !important;
+    }
+    .fbtn:hover, .fbtn.on {
+      background: var(--primary) !important; border-color: var(--primary) !important;
+      color: #1D1C1C !important;
+    }
+    .rbtn {
+      font-family: 'DM Mono', monospace !important; font-size: .62rem !important;
+      letter-spacing: .12em !important; text-transform: uppercase !important;
+      padding: .45rem 1rem !important; border-radius: 0 !important;
+      border: 1px solid rgba(245,243,238,.18) !important;
+      background: transparent !important; color: rgba(245,243,238,.45) !important;
+      cursor: none !important; transition: all .2s !important;
+    }
+    .rbtn-win   { color: var(--win) !important; border-color: rgba(22,163,74,.3) !important; }
+    .rbtn-loss  { color: var(--loss) !important; border-color: rgba(220,38,38,.3) !important; }
+    .rbtn-learn { color: #E8DC6A !important; border-color: rgba(232,220,106,.3) !important; }
+    .rbtn-win.on   { background: var(--win) !important; color: #fff !important; border-color: var(--win) !important; }
+    .rbtn-loss.on  { background: var(--loss) !important; color: #fff !important; border-color: var(--loss) !important; }
+    .rbtn-learn.on { background: #E8DC6A !important; color: #1D1C1C !important; border-color: #E8DC6A !important; }
+    .gap { flex: 1 !important; }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ══ h2 ELEMENT SELECTOR — exact portfolio.html rule ══════ */
+    h2 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(44px,6.5vw,96px) !important;
+      line-height: .92 !important;
+      letter-spacing: .01em !important;
+      color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+    h2 em {
+      font-style: normal !important;
+      color: var(--primary) !important;
+      -webkit-text-fill-color: var(--primary) !important;
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ══ EXPERIMENT CARDS — exact portfolio.html ═══════════════ */
+    .exp-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: rgba(245,243,238,.07);
+    }
+    .ec {
+      background: var(--bg); padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; gap: .9rem;
+      cursor: none; transition: background .25s;
+    }
+    .ec:hover { background: var(--card); }
+    .ec-top { display: flex; justify-content: space-between; align-items: center; }
+    .ec-surface {
+      font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: .15em;
+      text-transform: uppercase; color: rgba(245,243,238,.3);
+    }
+    .badge {
+      font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: .1em;
+      text-transform: uppercase; padding: .22rem .6rem;
+    }
+    .bw { color: var(--primary); border: 1px solid var(--primary); }
+    .bl { color: rgba(245,243,238,.28); border: 1px solid rgba(245,243,238,.12); }
+    .bo { color: #7DD3FC; border: 1px solid rgba(125,211,252,.35); }
+    .ec-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.55rem; letter-spacing: .02em; line-height: 1.1; }
+    .ec-lift { font-family: 'Space Grotesk', sans-serif; font-size: 2.8rem; letter-spacing: .02em; color: var(--primary); line-height: 1; }
+    .ec-lift.neg { color: rgba(245,243,238,.28); }
+    .ec-desc { font-size: .8rem; line-height: 1.65; color: rgba(245,243,238,.42); }
+    .ec-arr { align-self: flex-end; font-size: 1.1rem; color: rgba(245,243,238,.18); transition: all .2s; }
+    .ec:hover .ec-arr { color: var(--primary); transform: translate(3px,-3px); }
+    .ec.hide { display: none; }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ── CARD METRIC CHIPS ──────────────────────────── */
+    .ec-metrics { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: .75rem; }
+    .ec-chip {
+      background: rgba(245,243,238,.06); border: 1px solid rgba(245,243,238,.08);
+      padding: .5rem .75rem; flex: 1; min-width: 60px;
+    }
+    .ec-chip-v {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem;
+      letter-spacing: .02em; line-height: 1; display: block;
+      color: var(--text);
+    }
+    .ec-chip-v.pos { color: var(--win); }
+    .ec-chip-v.neg { color: var(--loss); }
+    .ec-chip-l {
+      font-family: 'DM Mono', monospace; font-size: .5rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(245,243,238,.35); display: block; margin-top: 3px;
+    }
+
+  
+    /* ══ CONTACT — exact portfolio.html ════════════════════════ */
+    .contact-wrap, .contact-inner-old { display: none !important; }
+    .contact-section {
+      padding: 7rem 3rem; border-top: 1px solid rgba(245,243,238,.07);
+      background: var(--bg);
+    }
+    .contact-inner-p { max-width: 780px; }
+    h2.c-hl {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(52px,8.5vw,110px) !important;
+      line-height: .92 !important; letter-spacing: .01em !important;
+      font-weight: 400 !important; color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
+      margin-bottom: 2.5rem !important;
+    }
+    h2.c-hl em { color: var(--primary) !important; -webkit-text-fill-color: var(--primary) !important; font-style: normal !important; }
+    .c-sub-p { font-size: .92rem; line-height: 1.75; color: rgba(245,243,238,.5); max-width: 460px; margin-bottom: 3rem; }
+    .c-links-p { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .c-link-p {
+      display: flex; align-items: center; gap: .75rem;
+      text-decoration: none; font-family: 'DM Mono', monospace; font-size: .78rem;
+      letter-spacing: .08em; padding: .9rem 2rem; transition: all .25s; cursor: none;
+    }
+    .cl-y-p { background: var(--primary); border: 1px solid var(--primary); color: #1D1C1C; }
+    .cl-y-p:hover { background: transparent; color: var(--primary); }
+    .cl-g-p { background: transparent; border: 1px solid rgba(245,243,238,.2); color: var(--text); }
+    .cl-g-p:hover { background: var(--primary); border-color: var(--primary); color: #1D1C1C; }
+    .c-loc-p {
+      margin-top: 2rem; font-family: 'DM Mono', monospace; font-size: .62rem;
+      letter-spacing: .12em; text-transform: uppercase; color: rgba(245,243,238,.25);
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ── LIGHTBOX TWO-COLUMN LAYOUT ──────────────────── */
+    .lb-box {
+      background: var(--card); border-radius: 24px;
+      max-width: 1200px; width: 100%; max-height: 90vh;
+      overflow: hidden; padding: 0; position: relative;
+      transform: translateY(24px); transition: transform .3s;
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .lb-overlay.open .lb-box { transform: translateY(0); }
+    .lb-img-col {
+      overflow-y: auto; background: #ffffff;
+      max-height: 90vh; position: sticky; top: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .lb-img-col img { width: 100%; display: block; }
+    .lb-img-col .lb-no-img {
+      height: 100%; min-height: 300px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 64px; color: rgba(245,243,238,.1);
+    }
+    .lb-content-col {
+      overflow-y: auto; max-height: 90vh; padding: 40px 36px;
+      position: relative;
+    }
+    .lb-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--bg); border: 1px solid var(--border);
+      cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;
+      transition: background .2s; z-index: 10;
+    }
+    @media (max-width: 768px) {
+      .lb-box { grid-template-columns: 1fr; }
+      .lb-img-col { max-height: 40vh; position: relative; }
+      .lb-content-col { max-height: 50vh; padding: 24px 20px; }
+    }
+
+  
+    /* ══ SYSTEM FONT OVERRIDE ════════════════════════════════════ */
+    :root {
+      --sys: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;  }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-weight: 400 !important;
+      line-height: 1.7 !important;
+      font-size: 15px !important;
+    }
+
+    h1, h2, h3,
+    .hero h1, section.hero h1,
+    .sec-h2, h2.sec-h2, h2.c-hl,
+    .m-title-p, .surf-name-p,
+    .cs-title, .lb-title,
+    .nav-logo,
+    .hero-watermark,
+    .m-num-p, .step-bg, .step-name,
+    .pat-col-h, .pat-title,
+    .ec-title, .ec-lift {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-weight: 500 !important;
+      line-height: 1.3 !important;
+      letter-spacing: normal !important;
+      -webkit-text-fill-color: unset !important;
+    }
+
+    /* Hero h1 — keep large, use weight 500 */
+    .hero h1, section.hero h1 {
+      font-size: clamp(48px, 8vw, 120px) !important;
+      line-height: 1.05 !important;
+      font-weight: 600 !important;
+    }
+    .hero h1 em {
+      color: var(--primary) !important;
+      -webkit-text-fill-color: var(--primary) !important;
+      font-style: normal !important;
+    }
+
+    /* Section h2 */
+    .sec-h2, h2.sec-h2 {
+      font-size: clamp(36px, 5vw, 72px) !important;
+      line-height: 1.1 !important;
+      font-weight: 600 !important;
+    }
+    .sec-h2 em { color: var(--primary) !important; -webkit-text-fill-color: var(--primary) !important; font-style: normal !important; }
+
+    /* Contact h2 */
+    h2.c-hl {
+      font-size: clamp(40px, 6vw, 88px) !important;
+      line-height: 1.05 !important;
+      font-weight: 600 !important;
+    }
+    h2.c-hl em { color: var(--primary) !important; -webkit-text-fill-color: var(--primary) !important; font-style: normal !important; }
+
+    /* Stat numbers */
+    .stat-n {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 28px !important;
+      font-weight: 500 !important;
+      color: var(--primary) !important;
+      line-height: 1.2 !important;
+      letter-spacing: normal !important;
+    }
+
+    /* Nav logo */
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 17px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    /* Labels — DM Mono stays for small caps labels */
+    .sec-label, .m-tag-p, .surf-id-p, .ec-surface,
+    .ec-chip-l, .stat-l, .hero-eyebrow, .c-loc-p, .lb-il {
+      font-family: 'DM Mono', monospace !important;
+    }
+
+    /* Card titles */
+    .ec-title {
+      font-size: 1.1rem !important;
+      font-weight: 600 !important;
+      line-height: 1.3 !important;
+    }
+    .ec-lift {
+      font-size: 1.8rem !important;
+      font-weight: 500 !important;
+      color: var(--primary) !important;
+      line-height: 1.2 !important;
+    }
+    .ec-lift.neg { color: rgba(245,243,238,.4) !important; }
+
+    /* Lightbox title */
+    .lb-title {
+      font-size: clamp(24px, 3vw, 36px) !important;
+      font-weight: 600 !important;
+      line-height: 1.2 !important;
+    }
+
+    /* Method step titles */
+    .m-title-p { font-size: 1.25rem !important; font-weight: 600 !important; }
+    .m-num-p { font-family: 'Space Grotesk', sans-serif !important; font-weight: 700 !important; font-size: 4rem !important; opacity: .06; }
+
+    /* Surface names */
+    .surf-name-p { font-size: 1.1rem !important; font-weight: 600 !important; }
+
+    /* Watermark */
+    .hero-watermark {
+      font-size: clamp(80px,16vw,240px) !important;
+      font-weight: 800 !important;
+      -webkit-text-stroke: 1px rgba(255,244,141,.06) !important;
+    }
+
+    /* Filter buttons keep DM Mono */
+    .fbtn, .rbtn { font-family: 'DM Mono', monospace !important; }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ── USER STYLE OVERRIDES ───────────────────────── */
+    .stat-n, .ec-lift, .metric-num {
+      color: #FFF48D !important;
+      font-weight: 500 !important;
+      font-size: 28px !important;
+    }
+    .ec-lift { font-size: 1.8rem !important; }
+    .stat-n  { font-size: 28px !important; }
+
+    /* Win badge — transparent + yellow border */
+    .badge-win, .bw, .rbtn-win.on {
+      background: transparent !important;
+      border: 1px solid #FFF48D !important;
+      color: #FFF48D !important;
+    }
+
+    /* CTA buttons */
+    .btn-y, .cl-y-p, .nav-cta, .btn-p {
+      background: #FFF48D !important;
+      color: #1D1C1C !important;
+      font-weight: 500 !important;
+      border-color: #FFF48D !important;
+    }
+    .btn-y:hover, .cl-y-p:hover, .nav-cta:hover {
+      background: transparent !important;
+      color: #FFF48D !important;
+    }
+    /* ───────────────────────────────────────────────── */
+
+  
+    /* ══ SCROLL TEXT ANIMATION (ozgur.design style) ══════════ */
+    .reveal-text .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .reveal-text.revealed .word {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Para / sub text — line by line */
+    .reveal-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-line.revealed { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-text .word,
+      .reveal-line { transition: none; opacity: 1; transform: none; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    #intro-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0a0a0a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      pointer-events: all;
+      overflow: hidden;
+    }
+    #intro-overlay.exit {
+      transform: translateY(-100%);
+      transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .intro-line {
+      overflow: hidden;
+      margin: 0;
+    }
+    .intro-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(40px, 8vw, 100px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: #F5F5F0;
+      display: block;
+      transform: translateY(100%);
+      opacity: 0;
+      line-height: 1.05;
+    }
+    .intro-name em {
+      font-style: normal;
+      color: var(--primary, #FFF48D);
+    }
+    .intro-name.in {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  opacity 0.5s ease;
+    }
+    .intro-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(10px, 1.2vw, 13px);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.4);
+      margin-top: 1.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .intro-tag.in { opacity: 1; transform: translateY(0); }
+    .intro-bar {
+      position: absolute; bottom: 0; left: 0;
+      height: 2px;
+      background: var(--primary, #FFF48D);
+      width: 0%;
+      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .intro-bar.in { width: 100%; }
+    
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    
+
+    #intro {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0a0a0a;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 3rem;
+      pointer-events: all;
+    }
+
+    /* Two vertical panels that split apart */
+    #intro-left, #intro-right {
+      position: absolute; top: 0; bottom: 0;
+      width: 50%; background: #0a0a0a;
+      transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+      z-index: 1;
+    }
+    #intro-left  { left: 0; }
+    #intro-right { right: 0; }
+    #intro.split #intro-left  { transform: translateX(-100%); }
+    #intro.split #intro-right { transform: translateX(100%); }
+
+    /* Counter */
+    #intro-count {
+      position: absolute; bottom: 3rem; left: 3rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(60px, 12vw, 140px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #F5F5F0;
+      z-index: 2;
+      user-select: none;
+    }
+
+    /* Name top-left */
+    #intro-name {
+      position: absolute; top: 3rem; left: 3rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.35);
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    #intro-name.show { opacity: 1; }
+
+    /* Role top-right */
+    #intro-role {
+      position: absolute; top: 3rem; right: 3rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.35);
+      z-index: 2; text-align: right;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    #intro-role.show { opacity: 1; }
+
+    /* Accent line bottom-right */
+    #intro-line {
+      position: absolute; bottom: 3rem; right: 3rem;
+      z-index: 2;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(60px, 12vw, 140px);
+      line-height: 1; letter-spacing: -0.04em;
+      color: var(--primary, #FFF48D);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    #intro-line.show { opacity: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      #intro { display: none; }
+      body.intro-active { overflow: auto; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+    #intro {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0d2828;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2.5rem;
+    }
+    .intro-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: clamp(32px, 6vw, 72px);
+      letter-spacing: -0.03em; color: #F5F5F0;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .intro-logo em { font-style: normal; color: var(--primary, #FFF48D); }
+    .intro-logo.show { opacity: 1; transform: translateY(0); }
+    .intro-progress-track {
+      width: 200px; height: 1px;
+      background: rgba(245,245,240,.12);
+      position: relative; overflow: hidden;
+      opacity: 0; transition: opacity 0.3s ease 0.3s;
+    }
+    .intro-progress-track.show { opacity: 1; }
+    .intro-progress-fill {
+      position: absolute; inset: 0; left: 0;
+      background: var(--primary, #FFF48D);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .intro-progress-fill.go { transform: scaleX(1); }
+    /* Curtain wipes up */
+    #intro.exit {
+      transform: translateY(-100%);
+      transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #intro { display: none; }
+      body.intro-active { overflow: auto; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+    #intro {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0a0a0a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2rem;
+    }
+    #intro.exit {
+      transform: translateY(-100%);
+      transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .intro-line { overflow: hidden; }
+    .intro-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 7vw, 80px);
+      font-weight: 700; letter-spacing: -0.04em;
+      color: #F5F5F0; display: block;
+      transform: translateY(110%); opacity: 0;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
+    }
+    .intro-name em { font-style: normal; color: #FFF48D; }
+    .intro-name.in { transform: translateY(0); opacity: 1; }
+    .intro-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,245,240,0.35);
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .intro-sub.in { opacity: 1; transform: translateY(0); }
+    .intro-track {
+      width: 180px; height: 1px;
+      background: rgba(245,245,240,0.1); position: relative; overflow: hidden;
+      opacity: 0; transition: opacity 0.3s ease 0.3s;
+    }
+    .intro-track.in { opacity: 1; }
+    .intro-fill {
+      position: absolute; inset: 0;
+      background: #FFF48D;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .intro-fill.go { transform: scaleX(1); }
+    @media (prefers-reduced-motion: reduce) {
+      #intro { display: none !important; }
+      
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #151410;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 2rem;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loader.hide { opacity: 0; visibility: hidden; }
+    .loader-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: clamp(28px, 5vw, 56px);
+      letter-spacing: -0.04em; color: #fff; text-align: center;
+    }
+    .loader-logo em { font-style: normal; color: #FFF48D; }
+    .loader-tags {
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    }
+    .loader-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5);
+      padding: 5px 14px; border-radius: 100px;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .loader-tag.in { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      #loader { display: none; }
+      body.loading { overflow: auto; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ══ ABOUT SECTION ═════════════════════════════════════════ */
+    .about-wrap {
+      padding: 7rem 3rem; border-top: 1px solid rgba(245,243,238,.07);
+      background: var(--bg);
+    }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+      max-width: 1200px;
+    }
+    .about-bio {
+      font-size: 1.05rem; line-height: 1.8;
+      color: rgba(245,243,238,.65); margin-top: 2rem;
+    }
+    .about-bio strong { color: var(--text); font-weight: 600; }
+    .about-stats { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
+    .about-stat-row {
+      border-top: 1px solid rgba(245,243,238,.08);
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .about-stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 4vw, 52px); font-weight: 700;
+      letter-spacing: -0.03em; color: var(--primary); line-height: 1;
+    }
+    .about-stat-lbl {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(245,243,238,.35); margin-top: 6px; display: block;
+    }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2.5rem; }
+    .about-tag {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(245,243,238,.15); color: rgba(245,243,238,.4);
+      padding: 5px 14px; border-radius: 100px;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-wrap { padding: 5rem 1.5rem; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+  </style>
+</head>
+<body>
+
+  <div class="loader-tags">
+    <span class="loader-tag" id="lt1">CRO</span>
+    <span class="loader-tag" id="lt2">Growth Marketing</span>
+    <span class="loader-tag" id="lt3">Experimentation</span>
+  </div>
+</div>
+
+  <div class="intro-line"><span class="intro-name" id="iN2"><em>PATRICK</em></span></div>
+  <div class="intro-sub" id="iSub">CRO &amp; Growth · 60+ Experiments</div>
+  <div class="intro-track" id="iTrack"><div class="intro-fill" id="iFill"></div></div>
+</div>
+
+
+
+<div id="cur"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">SHIRLEY <em>PATRICK</em></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#surfaces">Surfaces</a></li>
+      <li><a href="#experiments">Experiments</a></li>
+      </ul>
+    <a href="#contact" class="nav-cta"><span class="pulse"></span>Available for Projects</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top" style="border:none;padding-top:0;">
+  <div class="hero-watermark" aria-hidden="true">EXPERIMENT</div>
+  <div class="hero-eyebrow">CRO &amp; Growth Portfolio · 2026</div>
+  <h1>
+    THE FULL<br>
+    <em>EXPERIMENT</em><br>
+    DOCUMENTATION.
+  </h1>
+  <div class="hero-row">
+    <div>
+      <p class="hero-sub">
+        Sixty-plus experiments across landing pages, demo funnels, signup flows, pricing, and mobile — four years at JustCall. Every test documented: what worked, what didn't, and why.
+      </p>
+      <div class="hero-btns">
+        <a href="#experiments" class="btn-y">View Experiments →</a>
+        <a href="#contact" class="btn-g">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-n">60+</span>
+        <span class="stat-l">Tests run across<br>JustCall &amp; Kissflow</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">12</span>
+        <span class="stat-l">Surfaces optimised —<br>one repeatable system</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">340+</span>
+        <span class="stat-l">Demo leads from<br>exit intent alone</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-item">A/B Testing</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Landing Page CRO</span><span class="mq-dot"> · </span>
+    <span class="mq-item">GA4 / BigQuery</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Funnel Analysis</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Experiment Design</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Hypothesis Generation</span><span class="mq-dot"> · </span>
+    <span class="mq-item">VWO · Optimizely</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Heatmaps &amp; Session Replay</span><span class="mq-dot"> · </span>
+    <span class="mq-item">PIE Scoring</span><span class="mq-dot"> · </span>
+    <span class="mq-item">HubSpot CRM</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Exit Intent Optimisation</span><span class="mq-dot"> · </span>
+    <span class="mq-item">A/B Testing</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Landing Page CRO</span><span class="mq-dot"> · </span>
+    <span class="mq-item">GA4 / BigQuery</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Funnel Analysis</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Experiment Design</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Hypothesis Generation</span><span class="mq-dot"> · </span>
+    <span class="mq-item">VWO · Optimizely</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Heatmaps &amp; Session Replay</span><span class="mq-dot"> · </span>
+    <span class="mq-item">PIE Scoring</span><span class="mq-dot"> · </span>
+    <span class="mq-item">HubSpot CRM</span><span class="mq-dot"> · </span>
+    <span class="mq-item">Exit Intent Optimisation</span><span class="mq-dot"> · </span>
+  </div>
+</div>
+
+<!-- METHOD -->
+<section class="method-wrap-p" id="method" style="margin-top:72px;">
+  <div class="sec-label" data-n="01 ·">The Method</div>
+  <h2 class="sec-h2 ap">A SYSTEM, NOT A<br><em>COLLECTION OF TRICKS.</em></h2>
+  <p class="method-intro-p">Every experiment runs on the same four-step loop. The discipline isn't the framework — it's refusing to ship a test that hasn't passed all four gates.</p>
+  <div class="m-grid">
+    <div class="m-step-p">
+      <div class="m-num-p">01</div>
+      <div class="m-tag-p">01 / Research</div>
+      <div class="m-title-p">Find the friction.</div>
+      <p class="m-body-p">Heuristic analysis, heatmaps, session replay, qualitative review. The data tells me where users hesitate — recordings tell me why.</p>
+    </div>
+    <div class="m-step-p">
+      <div class="m-num-p">02</div>
+      <div class="m-tag-p">02 / Hypothesise</div>
+      <div class="m-title-p">Problem to mechanism.</div>
+      <p class="m-body-p">Every test gets a written hypothesis tying observed friction to a proposed mechanism. PIE scoring sets priority. If I can't articulate the why, it doesn't ship.</p>
+    </div>
+    <div class="m-step-p">
+      <div class="m-num-p">03</div>
+      <div class="m-tag-p">03 / Test</div>
+      <div class="m-title-p">Controlled, instrumented.</div>
+      <p class="m-body-p">VWO / Optimizely with data-layer integrity across GA4, GTM, Amplitude, Heap. No dirty splits, no eyeballed wins.</p>
+    </div>
+    <div class="m-step-p">
+      <div class="m-num-p">04</div>
+      <div class="m-tag-p">04 / Learn</div>
+      <div class="m-title-p">Win or learn.</div>
+      <p class="m-body-p">Significance review, behavioural read-out, written learning that updates the next test's prior. Losses are evidence, not waste.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SURFACES -->
+<section class="surfaces-wrap-p" id="surfaces">
+  <div class="sec-label" data-n="02 ·">Where I Operate</div>
+  <h2 class="sec-h2 ap">TWELVE SURFACES.<br><em>ONE REPEATABLE SYSTEM.</em></h2>
+  <p class="surfaces-intro-p">Every experiment, on every page, runs through the same four gates.</p>
+  <div class="surf-grid-p">
+    <div class="surf-tile-p">
+      <div class="surf-id-p">I</div>
+      <div class="surf-name-p">Brand &amp; Homepage</div>
+      <div class="surf-note-p">Hero copy, social proof, exit intent, CTA placement</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">II</div>
+      <div class="surf-name-p">PPC Landing Pages</div>
+      <div class="surf-note-p">Vertical-specific, ICP-matched, ad-to-page continuity</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">III</div>
+      <div class="surf-name-p">Vertical LPs</div>
+      <div class="surf-note-p">Solar · Dental · Real Estate · Legal Intake · Mortgage</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">IV</div>
+      <div class="surf-name-p">Product LPs</div>
+      <div class="surf-note-p">AI Receptionist · AI Voice Agent · AI Dialer</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">V</div>
+      <div class="surf-name-p">Comparison Pages</div>
+      <div class="surf-note-p">Competitive framing, negative ICP qualification</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">VI</div>
+      <div class="surf-name-p">Demo Experiments</div>
+      <div class="surf-note-p">Form friction, scheduling flow, SDR hand-off</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">VII</div>
+      <div class="surf-name-p">Signup Flow</div>
+      <div class="surf-note-p">SSO vs email, step count, progressive disclosure</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">VIII</div>
+      <div class="surf-name-p">Pricing</div>
+      <div class="surf-note-p">Anchoring, tier naming, decoy plans, toggle defaults</div>
+    </div>
+    <div class="surf-tile-p">
+      <div class="surf-id-p">IX</div>
+      <div class="surf-name-p">Mobile Placement</div>
+      <div class="surf-note-p">Sticky CTAs, thumb-zone targeting, intent calibration</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIMENTS -->
+<section class="section cs-wrap" id="experiments">
+  <div class="section-inner">
+    <div class="sec-label" data-n="03 ·">Experiments</div>
+    <h2 class="sec-h2 ap">60+ TESTS. EVERY ONE<br><em>DOCUMENTED.</em></h2>
+    <p class="surfaces-intro-p">Wins, losses, and what each taught me. Click any card to see the full data.</p>
+    <div class="filter-row" id="filterRow">
+      <button class="fbtn on" data-sec="all">All</button>
+      <button class="fbtn" data-sec="brand-homepage">I · Brand &amp; Homepage</button>
+      <button class="fbtn" data-sec="product-lps">IV · Product LPs</button>
+      <button class="fbtn" data-sec="ppc">II · PPC Landing Pages</button>
+      <button class="fbtn" data-sec="comparison">V · Comparison Pages</button>
+      <button class="fbtn" data-sec="demo">VI · Demo Experiments</button>
+      <button class="fbtn" data-sec="pricing">VIII · Pricing</button>
+      <span class="gap"></span>
+      <button class="rbtn rbtn-win"   data-res="win">✓ Win</button>
+      <button class="rbtn rbtn-loss"  data-res="loss">✗ Loss</button>
+      <button class="rbtn rbtn-learn" data-res="learning">◎ Learning</button>
+    </div>
+    <div class="exp-grid" id="csGrid"></div>
+  </div>
+</section>
+
+<!-- PATTERNS removed -->
+
+<!-- ABOUT -->
+<section class="about-wrap" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="sec-label" data-n="00 ·">About</div>
+      <h2 class="sec-h2 ap">WHO I<br><em>AM.</em></h2>
+      <p class="about-bio ap">
+        I started out as a designer — obsessed with how things look and feel. Over time, I got equally obsessed with whether they actually <strong>work</strong>.
+        <br><br>
+        That crossover is where I live now. For the past few years at <strong>SaaS Labs (JustCall)</strong>, I've run 350+ experiments across the full funnel — not just to lift numbers, but to understand why visitors do or don't convert. Every test has a hypothesis. Every result gets documented. Wins and losses both teach you something.
+        <br><br>
+        I bring together design instinct, analytical thinking, and a deep respect for the buyer — because conversion isn't a trick. It's clarity at the right moment. I'm at my best when I can <strong>own the full picture</strong>: from the GA4 funnel to the Figma file to the business case in front of leadership.
+      </p>
+      <div class="about-tags ap">
+        <span class="about-tag">A/B Testing</span>
+        <span class="about-tag">Conversion Strategy</span>
+        <span class="about-tag">GA4 &amp; BigQuery</span>
+        <span class="about-tag">VWO · Optimizely</span>
+        <span class="about-tag">Figma</span>
+        <span class="about-tag">UX Research</span>
+        <span class="about-tag">SaaS</span>
+        <span class="about-tag">HubSpot CRM</span>
+      </div>
+    </div>
+    <div class="about-stats ap">
+      <div class="about-stat-row">
+        <div>
+          <span class="about-stat-num">10+</span>
+          <span class="about-stat-lbl">Years in B2B SaaS &amp; Growth</span>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div>
+          <span class="about-stat-num">350+</span>
+          <span class="about-stat-lbl">A/B &amp; Multivariate Experiments</span>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div>
+          <span class="about-stat-num">+42.7%</span>
+          <span class="about-stat-lbl">Visitor-to-Lead CVR Lift</span>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div>
+          <span class="about-stat-num">54%</span>
+          <span class="about-stat-lbl">Reduction in Cost Per Lead</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner-p">
+    <div class="sec-label" data-n="">Available for New Projects</div>
+    <h2 class="c-hl ap">LET'S OPTIMISE<br><em>YOUR FUNNEL.</em></h2>
+    <p class="c-sub-p ap">If you've got real traffic, real tooling, and a willingness to learn from losses — we'll move numbers.</p>
+    <div class="c-links-p ap">
+      <a href="mailto:shirleypatrick1@gmail.com" class="c-link-p cl-y-p">✉ Email shirleypatrick1@gmail.com</a>
+      <a href="https://linkedin.com/in/shirleypatrick/" class="c-link-p cl-g-p" target="_blank" rel="noopener">in LinkedIn · linkedin.com/in/shirleypatrick</a>
+    </div>
+    <p class="c-loc-p">📍 Location — Chennai, India</p>
+  </div>
+</section>
+
+<div class="footer"><p>Shirley Patrick · CRO & Growth Portfolio 2026</p></div>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lbOverlay">
+  <button class="lb-nav lb-prev" id="lbPrev">&#8592;</button>
+  <button class="lb-nav lb-next" id="lbNext">&#8594;</button>
+  <div class="lb-counter" id="lbCounter"></div>
+  <div class="lb-box">
+    <div class="lb-img-col" id="lbImgCol"></div>
+    <div class="lb-content-col" id="lbContent">
+      <button class="lb-close" id="lbClose">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+
+/* ─── CURSOR (defined first so bindCursor is always available) ─── */
+const cur = document.getElementById('cur');
+function bindCursor(){
+  document.querySelectorAll('a,button,.ec,.m-step-p,.surf-tile-p,.fbtn,.rbtn').forEach(el => {
+    el.removeEventListener('mouseenter', _curBig);
+    el.removeEventListener('mouseleave', _curSmall);
+    el.addEventListener('mouseenter', _curBig);
+    el.addEventListener('mouseleave', _curSmall);
+  });
+}
+function _curBig(){ if(cur) cur.classList.add('big'); }
+function _curSmall(){ if(cur) cur.classList.remove('big'); }
+if(cur){
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top  = e.clientY + 'px';
+  });
+}
+/* ─────────────────────────────────────────────────────
+   DATA — verbatim from all 48 slides, no fabrication
+───────────────────────────────────────────────────── */
+const SURFACES = [
+  { num:"01", name:"Homepage",         desc:"Value-prop clarity, hierarchy, navigation, hero composition." },
+  { num:"02", name:"PPC Landing",      desc:"Message match, distraction removal, intent-led layout." },
+  { num:"03", name:"Pricing",          desc:"Plan comparison, inline forms, exit-intent capture." },
+  { num:"04", name:"Demo Flow",        desc:"Form architecture, qualification, CTA language." },
+  { num:"05", name:"Signup",           desc:"Friction removal, social auth ordering, trust signals." },
+  { num:"06", name:"Mobile",           desc:"Thumb-zone placement, nav bar CTA, reach-without-effort." },
+  { num:"07", name:"Exit Popups",      desc:"Behavioural triggers at pricing-page abandonment." },
+  { num:"08", name:"Floating Banners", desc:"Persistent low-friction CTAs across paid pages." },
+  { num:"09", name:"Widgets",          desc:"Interactive product tours, ROI calculators, embedded demos." },
+  { num:"10", name:"Comparison Pages", desc:"Competitor pages, message frames, social proof patterns." },
+  { num:"11", name:"Vertical Pages",   desc:"Industry-specific layouts: solar, dental, real estate, mortgage." },
+  { num:"12", name:"Contact Us",       desc:"Multi-path routing, AI SDR, SMS opt-in, demo booking." }
+];
+
+const SEC = {
+  "brand-homepage":"Brand & Homepage",
+  "product-lps":   "Product LPs",
+  "ppc":           "PPC Landing Pages",
+  "comparison":    "Comparison Pages",
+  "demo":          "Demo Experiments",
+  "pricing":       "Pricing"
+};
+
+const EXP = [
+/* ── I. BRAND & HOMEPAGE ──────────────────────────── */
+{
+  id:"CS01", sec:"brand-homepage", result:"win",
+  title:"Homepage Messaging & Visual Revamp",
+  url:"justcall.io",
+  hypo:"Revamping messaging and design language will upscale brand image and improve conversion rate.",
+  metrics:[
+    {l:"Control CR",     v:"1.65%"},
+    {l:"Challenger CR",  v:"1.91%", p:true},
+    {l:"Lift",           v:"+15.47%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",     v:"20,242"},
+    {k:"Traffic (Challenger)",  v:"22,044"},
+    {k:"Control CR",            v:"1.65%"},
+    {k:"Challenger CR",         v:"1.91%"},
+    {k:"Lift",                  v:"+15.47%", c:"pos"}
+  ],
+  insight:"Clearer value prop combined with a modern visual hierarchy significantly improved first-impression clarity and trust.",
+  img:"assets/images/image7.png"
+},
+{
+  id:"CS02", sec:"brand-homepage", result:"win",
+  title:"Brand Page Without Nav Bar",
+  url:"justcall.io",
+  hypo:"Removing the navigation bar from the PPC landing page will reduce distractions and increase conversions, as it keeps users focused on the primary call-to-action without offering exits or competing paths.",
+  metrics:[
+    {l:"Control CR",    v:"1.13%"},
+    {l:"Challenger CR", v:"1.31%", p:true},
+    {l:"Total Lift",    v:"+28.12%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"29,180"},
+    {k:"Traffic (Challenger)", v:"34,784"},
+    {k:"Control CR",           v:"1.13%"},
+    {k:"Challenger CR",        v:"1.31%"},
+    {k:"MV Signup (Control)",  v:"168 (0.58%)"},
+    {k:"MV Signup (Challenger)",v:"260 (0.75%) +24.01%",c:"pos"},
+    {k:"MV Demo (Control)",    v:"46 (0.16%)"},
+    {k:"MV Demo (Challenger)", v:"68 (0.20%) +29.83%",c:"pos"},
+    {k:"Total Lift",           v:"+28.12%",c:"pos"}
+  ],
+  insight:"Removing navigation eliminated exit paths, directing full attention to the primary CTA and significantly improving both signup and demo conversion rates.",
+  img:"assets/images/image_cs02_combined.png"
+},
+{
+  id:"CS03", sec:"brand-homepage", result:"win",
+  title:"Feature-Led Hero",
+  url:"justcall.io",
+  hypo:"Replacing a static hero image with an interactive product preview will boost understanding and purchase intent.",
+  metrics:[
+    {l:"Control CR",    v:"5.80%"},
+    {l:"Challenger CR", v:"7.88%", p:true},
+    {l:"Lift",          v:"+35.89%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"11,316"},
+    {k:"Traffic (Challenger)", v:"10,460"},
+    {k:"Control CR",           v:"5.80%"},
+    {k:"Challenger CR",        v:"7.88%"},
+    {k:"Lift",                 v:"+35.89%",c:"pos"}
+  ],
+  insight:"Immediate product clarity > generic visuals. Showing the product in action built confidence early for high-intent visitors.",
+  img:"assets/images/image17.png"
+},
+{
+  id:"CS04", sec:"brand-homepage", result:"loss",
+  title:"Homepage Dual CTA",
+  url:"justcall.io",
+  hypo:"Providing two options (e.g., Free Trial + Demo) increases the likelihood at least one will be chosen.",
+  metrics:[
+    {l:"Free Trial Lift", v:"-7.8%",  p:false},
+    {l:"Demo Lift",       v:"-6.2%",  p:false},
+    {l:"CR Drop",         v:"-7.8%",  p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",        v:"17,076"},
+    {k:"Traffic (Challenger)",     v:"17,214"},
+    {k:"Free Trial Total (Ctrl)",  v:"934"},
+    {k:"Free Trial Total (Chall)", v:"868"},
+    {k:"Free Trial E-verified",    v:"451 → 415 (−8.7%)",c:"neg"},
+    {k:"Free Trial M-verified",    v:"275 → 284 (−3.9%)",c:"neg"},
+    {k:"Free Trial Lift",          v:"−7.8%",c:"neg"},
+    {k:"Demo Total (Ctrl)",        v:"330"},
+    {k:"Demo Total (Chall)",       v:"312"},
+    {k:"Demo M-verified",          v:"135 → 131 (−3.7%)",c:"neg"},
+    {k:"Demo Lift",                v:"−6.2%",c:"neg"}
+  ],
+  insight:"Choice overload likely diluted primary intent; the single dominant CTA approach performed better than offering two competing paths.",
+  img:"assets/images/image_cs04_combined.png"
+
+},
+{
+  id:"CS06", sec:"brand-homepage", result:"mixed",
+  title:"Hero Tiles Redesign",
+  url:"justcall.io",
+  hypo:"Redesigning the hero by adding a prominent headline and skimmable feature tiles will drive faster comprehension and clicks.",
+  metrics:[
+    {l:"Trial Lift",    v:"+6.5%",  p:true},
+    {l:"Demo FF Drop",  v:"−12.4%", p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",       v:"11,316"},
+    {k:"Traffic (Variant)",       v:"11,176"},
+    {k:"Free Trial Total (Ctrl)", v:"516"},
+    {k:"Free Trial Total (Var)",  v:"540"},
+    {k:"Free Trial E-verified",   v:"246 → 261 (+7.9%)",c:"pos"},
+    {k:"Free Trial M-verified",   v:"166 → 179 (+9.7%)",c:"pos"},
+    {k:"Free Trial Lift",         v:"+6.5%",c:"pos"},
+    {k:"Demo Total (Ctrl)",       v:"244"},
+    {k:"Demo Total (Var)",        v:"210"},
+    {k:"Demo M-verified",         v:"79 → 75"},
+    {k:"Demo FF Drop",            v:"−12.4%",c:"neg"}
+  ],
+  insight:"Structured scannability nudged trial action without hurting readability. However, demo intent was fragmented — tiles helped free trial, not demo funnel.",
+  img:"assets/images/image_cs06_combined.png"
+},
+
+/* ── IV. PRODUCT LPs & VISUALS ─────────────────────── */
+{
+  id:"CS09", sec:"product-lps", result:"learning",
+  title:"ROI Image vs Feature Video",
+  url:"justcall.io/product/lp/ai-dialer/",
+  hypo:"Pairing our bold ROI promise with a static hero image will drive more sign-ups than a complex feature video.",
+  metrics:[
+    {l:"Control CR",    v:"7.76%"},
+    {l:"Challenger CR", v:"3.81%", p:false},
+    {l:"Signup Drop",   v:"−63%",  p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"1,392"},
+    {k:"Traffic (Challenger)", v:"1,364"},
+    {k:"Control CR",           v:"7.76%"},
+    {k:"Challenger CR",        v:"3.81%"},
+    {k:"Demo Booking Lift",    v:"−14.9%",c:"neg"},
+    {k:"Signup Lift",          v:"−63%",c:"neg"},
+    {k:"Overall Lift",         v:"−50%",c:"neg"}
+  ],
+  insight:"Video distracted from the primary CTA. For this audience, a clear, static promise was significantly easier to process than motion media.",
+  img:"assets/images/image18.png"
+},
+{
+  id:"CS10", sec:"product-lps", result:"win",
+  title:"Video BG vs Social Proof",
+  url:"Sales Dialer LP",
+  hypo:"Replacing the video background with strong social proof elements will improve trust and increase conversion rates.",
+  metrics:[
+    {l:"Control CR",    v:"2.04%"},
+    {l:"Challenger CR", v:"2.58%", p:true},
+    {l:"Demo Booking",  v:"+75%",  p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"1,960"},
+    {k:"Traffic (Challenger)", v:"1,860"},
+    {k:"Control CR",           v:"2.04%"},
+    {k:"Challenger CR",        v:"2.58%"},
+    {k:"Demo Booking (Ctrl)",  v:"0.61%"},
+    {k:"Demo Booking (Chall)", v:"1.02% (+75%)",c:"pos"},
+    {k:"Signup",               v:"1.08% → 1.08% (flat)"}
+  ],
+  insight:"Credibility signals and social proof outperformed aesthetic motion-heavy backgrounds, significantly driving high-intent demo requests.",
+  img:"assets/images/image_cs10_combined.png"
+},
+{
+  id:"CS11", sec:"product-lps", result:"win",
+  title:"Embedded Product Tour",
+  url:"justcall.io/product/lp/auto-dialer/",
+  hypo:"Embedding a product tour directly on the page will increase understanding and conversions for high-intent visitors.",
+  metrics:[
+    {l:"Control CR",    v:"2.09%"},
+    {l:"Challenger CR", v:"3.67%", p:true},
+    {l:"Lift",          v:"+75.5%",p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",     v:"6,120"},
+    {k:"Total (Control)",       v:"128"},
+    {k:"Traffic (Challenger)",  v:"6,100"},
+    {k:"Total (Challenger)",    v:"224"},
+    {k:"Control CR",            v:"2.09%"},
+    {k:"Challenger CR",         v:"3.67%"},
+    {k:"Lift",                  v:"+75.5%",c:"pos"}
+  ],
+  insight:"Instant, self-serve product clarity was a major unlock for sign-ups. Users prefer to see the product in action immediately before committing to a demo or trial.",
+  img:"assets/images/image22.png"
+},
+{
+  id:"CS12", sec:"product-lps", result:"win",
+  title:"Contextual Visual",
+  url:"Sales Dialer LP",
+  hypo:"Replacing a generic agent image with country-specific number options increases confidence and conversion.",
+  metrics:[
+    {l:"Control CR",    v:"2.38%"},
+    {l:"Challenger CR", v:"2.86%", p:true},
+    {l:"Lift",          v:"+20.05%",p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"2,690"},
+    {k:"Total (Control)",      v:"64"},
+    {k:"Traffic (Challenger)", v:"2,800"},
+    {k:"Total (Challenger)",   v:"80"},
+    {k:"Control CR",           v:"2.38%"},
+    {k:"Challenger CR",        v:"2.86%"},
+    {k:"Lift",                 v:"+20.05%",c:"pos"}
+  ],
+  insight:"Context beats stock imagery; specificity regarding available phone numbers significantly reduced uncertainty for international users.",
+  img:"assets/images/image_cs12_combined.png"
+},
+{
+  id:"CS18", sec:"product-lps", result:"win",
+  title:"G2 Badges vs Security Logos",
+  url:"PPC landing pages",
+  hypo:"Security badges address compliance concerns upfront for decision-makers in regulated industries, signaling credibility more than popularity badges.",
+  metrics:[
+    {l:"Kixie → Challenger",    v:"3.47% → 4.9%",  p:true},
+    {l:"Dialpad → Challenger",  v:"3.35% → 4.5%",  p:true},
+    {l:"Phoneburner Challenger", v:"5.05% & 6%",    p:true}
+  ],
+  rows:[
+    {k:"Kixie Control CR",       v:"3.47%"},
+    {k:"Kixie Challenger CR",    v:"4.9%",c:"pos"},
+    {k:"Dialpad Control CR",     v:"3.35%"},
+    {k:"Dialpad Challenger CR",  v:"4.5%",c:"pos"},
+    {k:"Phoneburner Challenger", v:"5.05% & 6%",c:"pos"}
+  ],
+  insight:"For risk-averse B2B buyers in regulated sectors, security compliance badges (SOC2, GDPR) built more trust than popularity awards.",
+  img:"assets/images/image26.png"
+},
+
+/* ── II. PPC LANDING PAGES ─────────────────────────── */
+{
+  id:"CS05", sec:"ppc", result:"win",
+  title:"Brand Messaging: KISS vs Detailed",
+  url:"justcall.io/lp-v1/",
+  hypo:"Applying the KISS (Keep It Simple, Stupid) principle will reduce cognitive load and improve conversion rates.",
+  metrics:[
+    {l:"Overall Lift",    v:"+7.3%",  p:true},
+    {l:"MV Signup Lift",  v:"+25.4%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"2,202"},
+    {k:"Traffic (Challenger)", v:"2,160"},
+    {k:"Control CR",           v:"3.87%"},
+    {k:"Challenger CR",        v:"4.81%"},
+    {k:"MV Signup (Ctrl)",     v:"0.93%"},
+    {k:"MV Signup (Chall)",    v:"1.17% (+25.4%)",c:"pos"},
+    {k:"MV Demo (Ctrl)",       v:"0.99%"},
+    {k:"MV Demo (Chall)",      v:"1.47% (+7.3%)",c:"pos"}
+  ],
+  insight:"Concise copy with a scannable structure significantly outperformed detail-heavy content, validating that clarity drives action.",
+  img:"assets/images/image29.png"
+},
+{
+  id:"CS07", sec:"ppc", result:"win",
+  title:"'Request a Demo' vs 'Talk to a Human'",
+  url:"justcall.io/lp-v1",
+  hypo:"Replacing 'Request a demo' with 'Talk to a human' will set clearer expectations and increase engagement.",
+  metrics:[
+    {l:"Control Demo CR",    v:"6.70%"},
+    {l:"Challenger Demo CR", v:"10.93%", p:true},
+    {l:"M-Verified Lift",    v:"+63.3%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"836"},
+    {k:"Demo FF (Control)",    v:"56"},
+    {k:"Traffic (Challenger)", v:"750"},
+    {k:"Demo FF (Challenger)", v:"82"},
+    {k:"Demo CR (Control)",    v:"6.70%"},
+    {k:"Demo CR (Challenger)", v:"10.93%"},
+    {k:"MV Control",           v:"54 (6.46%)"},
+    {k:"MV Challenger",        v:"66 (8.80%)"},
+    {k:"Demo FF Lift",         v:"+36.24%",c:"pos"},
+    {k:"M-Verified Lift",      v:"+63.3%",c:"pos"}
+  ],
+  insight:"Conversational CTA matched user intent and reduced perceived friction. 'Talk to a Human' re-frames the ask from form submission to person access — the cleanest test in the series.",
+  img:"assets/images/image41.png"
+},
+{
+  id:"CS08", sec:"ppc", result:"win",
+  title:"Regional Personalization",
+  url:"justcall.io/lp-v1-uk/",
+  hypo:"Tailoring layout, CTAs, and content to match the behavior of UK, AU, and US users increases relevance and conversion.",
+  metrics:[
+    {l:"Control CR",    v:"3.97%"},
+    {l:"Challenger CR", v:"5.35%", p:true},
+    {l:"Lift",          v:"+34.72%",p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"10,116"},
+    {k:"Demo FF (Control)",    v:"402"},
+    {k:"Traffic (Challenger)", v:"10,460"},
+    {k:"Demo FF (Challenger)", v:"560"},
+    {k:"Control CR",           v:"3.97%"},
+    {k:"Challenger CR",        v:"5.35%"},
+    {k:"Lift",                 v:"+34.72%",c:"pos"}
+  ],
+  insight:"Localized proof points and currency formatting improved trust. Users convert better when they feel the service is built for their specific region.",
+  img:"assets/images/image_cs08_combined.png"
+},
+{
+  id:"UK-Regional", sec:"ppc", result:"win",
+  title:"UK Regional Social Proof Refresh",
+  url:"justcall.io/lp-v1-uk/ · April 2026",
+  hypo:"Adding region-specific UK proof points (logos, testimonials, currency) to the brand landing page will lift CR for UK paid traffic.",
+  metrics:[
+    {l:"Pre-launch CR",  v:"4.22%"},
+    {l:"April 2026 CR",  v:"5.38%", p:true},
+    {l:"Lift",           v:"+27%",   p:true}
+  ],
+  rows:[
+    {k:"Period",         v:"April 2026"},
+    {k:"Pre-launch CR",  v:"4.22%"},
+    {k:"April 2026 CR",  v:"5.38%"},
+    {k:"Delta",          v:"+1.16pp"},
+    {k:"Lift",           v:"+27%",c:"pos"},
+    {k:"AU same template", v:"−26% (failed — templates don't transfer)", c:"neg"}
+  ],
+  insight:"The UK regional social proof refresh worked. The parallel AU test using the same template did not (−26%) — confirming that regional relevance can't be templated. What works for UK doesn't auto-transfer to AU.",
+  img:"assets/images/image_uk_regional.png"
+},
+{
+  id:"CS13", sec:"ppc", result:"win",
+  title:"PPC LP Without Nav Bar",
+  url:"justcall.io/product/lp/auto-dialer/",
+  hypo:"Removing the navigation bar on PPC landing pages will increase focus on the core CTA and reduce exits by limiting distraction.",
+  metrics:[
+    {l:"Control CR",    v:"3.63%"},
+    {l:"Challenger CR", v:"5.46%", p:true},
+    {l:"Lift Range",    v:"+28–50%",p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",      v:"24,602"},
+    {k:"Total (Control)",        v:"892"},
+    {k:"Traffic (Challenger)",   v:"2,160"},
+    {k:"Total (Challenger)",     v:"1,344"},
+    {k:"Control CR",             v:"3.63%"},
+    {k:"Challenger CR",          v:"5.46%"},
+    {k:"Signup (Control)",       v:"462 (1.88%)"},
+    {k:"Signup (Challenger)",    v:"596 (2.42%) +28%",c:"pos"},
+    {k:"No-nav Signup",          v:"164 (0.67%) → 92 (0.75%) +12.09%",c:"pos"},
+    {k:"Total Lift",             v:"+50%",c:"pos"}
+  ],
+  insight:"Ad-to-LP message match combined with fewer exit points significantly improved yield from paid traffic.",
+  img:"assets/images/image_cs13_combined.png"
+},
+{
+  id:"CS17", sec:"ppc", result:"win",
+  title:"Social Proof Carousel",
+  url:"CallHippo Comparison Page",
+  hypo:"Adding a scrolling customer proof carousel increases credibility and conversions.",
+  metrics:[
+    {l:"Control CR",    v:"3.45%"},
+    {l:"Challenger CR", v:"4.26%", p:true},
+    {l:"Lift",          v:"+23.40%",p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"2,900"},
+    {k:"Total (Control)",      v:"100"},
+    {k:"Traffic (Challenger)", v:"2,820"},
+    {k:"Total (Challenger)",   v:"160"},
+    {k:"Control CR",           v:"3.45%"},
+    {k:"Challenger CR",        v:"4.26%"},
+    {k:"Lift",                 v:"+23.40%",c:"pos"}
+  ],
+  insight:"Dynamic yet focused proof outperformed static logos alone, demonstrating that movement draws attention to trust signals.",
+  img:"assets/images/image_cs17_combined.png"
+},
+{
+  id:"Interactive-PPC", sec:"ppc", result:"learning",
+  title:"Interactive Page for PPC",
+  url:"justcall.io/product/lp/ai-voice-agent-v1/?step1 · sales-dialer-v3/?step1",
+  hypo:"An interactive landing page will increase engagement and conversions because visitors can explore the product step by step instead of scrolling through a static layout.",
+  metrics:[
+    {l:"Engagement Lift", v:"None"},
+    {l:"CR Lift",         v:"None"}
+  ],
+  rows:[
+    {k:"Result",     v:"No lift in engagement or conversions"},
+    {k:"Prototypes", v:"Two URLs tested (AI Voice Agent + Sales Dialer v3)"}
+  ],
+  insight:"Interactive explorers did not convert better than static layouts for this PPC audience. Multi-step exploration added friction that outweighed the benefit of guided discovery.",
+  img:"assets/images/image34.png"
+},
+
+/* ── V. COMPARISON PAGES ───────────────────────────── */
+{
+  id:"CS14", sec:"comparison", result:"loss",
+  title:"Mojo Dialer Alternative Page",
+  url:"",
+  hypo:"Leading with a clear, quantifiable ROI statement paired with a concise comparison table will reduce confusion and increase conversion.",
+  metrics:[
+    {l:"Control CR",    v:"13.39%"},
+    {l:"Challenger CR", v:"4.55%",  p:false},
+    {l:"Overall Lift",  v:"−66%",   p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"488"},
+    {k:"Traffic (Challenger)", v:"352"},
+    {k:"Control CR",           v:"13.39%"},
+    {k:"Challenger CR",        v:"4.55%"},
+    {k:"Demo Booking (Ctrl)",  v:"3.57%"},
+    {k:"Demo Booking (Chall)", v:"1.14% (−62%)",c:"neg"},
+    {k:"Signup (Control)",     v:"8.93%"},
+    {k:"Signup (Challenger)",  v:"3.41% (−68%)",c:"neg"},
+    {k:"Overall Lift",         v:"−66%",c:"neg"}
+  ],
+  insight:"Provocative hooks significantly outperformed the 'rational' ROI/comparison approach on this competitor page. Clarity alone wasn't enough to beat a strong emotional hook.",
+  img:"assets/images/image_cs14_combined.png"
+},
+{
+  id:"CS15", sec:"comparison", result:"win",
+  title:"Reason-First vs Proof-First",
+  url:"CallHippo Comparison Page",
+  hypo:"Trimming copy and adding recognizable logos (proof-first) increases trust and conversions.",
+  metrics:[
+    {l:"Control CR",    v:"3.63%"},
+    {l:"Challenger CR", v:"5.46%", p:true},
+    {l:"Lift",          v:"+50%",  p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",       v:"24,602"},
+    {k:"Total (Control)",         v:"892"},
+    {k:"Traffic (Challenger)",    v:"2,160"},
+    {k:"Total (Challenger)",      v:"1,344"},
+    {k:"Control CR",              v:"3.63%"},
+    {k:"Challenger CR",           v:"5.46%"},
+    {k:"Signup (Control)",        v:"462 (1.88%)"},
+    {k:"Signup (Challenger)",     v:"596 (2.42%) +28%",c:"pos"},
+    {k:"Overall Lift",            v:"+50%",c:"pos"}
+  ],
+  insight:"The audience required more context before social proof; 'reason-first' messaging significantly outperformed the logo-heavy 'proof-first' approach.",
+  img:"assets/images/image_cs15_combined.png"
+},
+{
+  id:"CS16", sec:"comparison", result:"win",
+  title:"No-Nav Competitor Pages",
+  url:"PPC competitor landing pages",
+  hypo:"Removing top navigation on competitor comparison landing pages increases CTA focus and conversion rates.",
+  metrics:[
+    {l:"Kixie Lift",     v:"+87.1%", p:true},
+    {l:"Dialpad Lift",   v:"+34.3%", p:true},
+    {l:"Phoneburner",    v:"+67%+",  p:true}
+  ],
+  rows:[
+    {k:"Kixie Control CR",         v:"3.47%"},
+    {k:"Kixie Challenger CR",      v:"6.49% (+87.1%)",c:"pos"},
+    {k:"Dialpad Control CR",       v:"3.35%"},
+    {k:"Dialpad Challenger CR",    v:"4.5% (+34.3%)",c:"pos"},
+    {k:"Phoneburner Challenger",   v:"5.05% & 7.5%",c:"pos"}
+  ],
+  insight:"Fewer exits combined with value-first comparison sections consistently improved action rates across multiple competitor pages.",
+  img:"assets/images/image_cs16_combined.png"
+},
+
+/* ── VI. DEMO EXPERIMENTS ──────────────────────────── */
+{
+  id:"Demo-Exp1", sec:"demo", result:"win",
+  title:"Form Over UI (Demo Page)",
+  url:"Demo request page · Early 2025",
+  hypo:"Strip all surrounding UI — no nav, no social proof, no product screenshots. Just the form. If someone is on the demo page, everything else is noise.",
+  metrics:[
+    {l:"Control Demo CR",  v:"2.64%"},
+    {l:"Variant Demo CR",  v:"3.01%", p:true},
+    {l:"M-Verified Lift",  v:"+13.99%",p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"2,422"},
+    {k:"Demo Total (Control)", v:"64"},
+    {k:"Traffic (Variant)",    v:"2,656"},
+    {k:"Demo Total (Variant)", v:"84"},
+    {k:"Control Demo CR",      v:"2.64%"},
+    {k:"Variant Demo CR",      v:"3.01%"},
+    {k:"M-Verified Lift",      v:"+13.99%",c:"pos"},
+    {k:"M-Verified demo lift", v:"+25%",c:"pos"},
+    {k:"Post 100% launch",     v:"Microlevel impact: 1.5% on demo form submission"}
+  ],
+  insight:"Removing visual competitors at the decision moment eliminates hesitation and commits the visitor to the one action available. Challenger became the new control for subsequent tests.",
+  img:"assets/images/image_exp1_form_over_ui.png"
+},
+{
+  id:"Demo-Exp2", sec:"demo", result:"win",
+  title:"UI Background + 2-Column Layout",
+  url:"Demo request page · Mid 2025",
+  hypo:"Adding a UI dashboard background behind the demo form and restructuring fields into two columns will increase submissions by making the product feel tangible while reducing perceived form length.",
+  metrics:[
+    {l:"Total Lift",      v:"+17.2%", p:true},
+    {l:"M-Verified Lift", v:"+15.2%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"2,228"},
+    {k:"Demo Total (Control)", v:"362"},
+    {k:"Traffic (Variant)",    v:"2,142"},
+    {k:"Demo Total (Variant)", v:"408"},
+    {k:"M-Verified (Control)", v:"280"},
+    {k:"M-Verified (Variant)", v:"310"},
+    {k:"Total Lift",           v:"+17.2%",c:"pos"},
+    {k:"M-Verified Lift",      v:"+15.2%",c:"pos"}
+  ],
+  insight:"A UI dashboard background makes the product feel tangible. Two-column layout reduces perceived form length. Both reduce friction at the decision moment.",
+  img:"assets/images/image_exp2_ui_background.png"
+},
+{
+  id:"Demo-Exp3", sec:"demo", result:"win",
+  title:"Sliding Form Fields",
+  url:"Demo request page · Mid 2025",
+  hypo:"Gradually revealing form fields as users progress will make the form feel shorter and less intimidating, increasing demo submissions.",
+  metrics:[
+    {l:"Total Lift",      v:"+17.2%", p:true},
+    {l:"M-Verified Lift", v:"+15.2%", p:true}
+  ],
+  rows:[
+    {k:"Traffic (Control)",      v:"1,114"},
+    {k:"Traffic (Variant)",      v:"1,071"},
+    {k:"Total (Control)",        v:"181"},
+    {k:"Total (Variant)",        v:"204",  c:"pos"},
+    {k:"Total Lift",             v:"+17.2%",c:"pos"},
+    {k:"M-Verified (Control)",   v:"140"},
+    {k:"M-Verified (Variant)",   v:"155",  c:"pos"},
+    {k:"M-Verified Lift",        v:"+15.2%",c:"pos"}
+  ],
+  insight:"Sliding form fields reduced perceived length and intimidation. Progressive disclosure kept users engaged through the full form, lifting both total and quality-verified demo submissions.",
+  img:"assets/images/image_exp3_sliding_form.png"
+},
+{
+  id:"Demo-Exp4", sec:"demo", result:"loss",
+  title:"Qualifying Questions Modal",
+  url:"Demo request page · Mid 2025",
+  hypo:"Adding modal qualifying questions before the demo form will prime users and increase commitment by creating a multi-step engagement flow.",
+  metrics:[
+    {l:"Total Lift",      v:"−24%",  p:false},
+    {l:"M-Verified Lift", v:"−37%",  p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",     v:"926"},
+    {k:"Demo Total (Control)",  v:"170"},
+    {k:"Traffic (Variant)",     v:"1,006"},
+    {k:"Demo Total (Variant)",  v:"140"},
+    {k:"M-Verified (Control)",  v:"144"},
+    {k:"M-Verified (Variant)",  v:"98"},
+    {k:"Total Lift",            v:"−24%",c:"neg"},
+    {k:"M-Verified Lift",       v:"−37%",c:"neg"}
+  ],
+  insight:"Additional friction before the form gates high-intent users. Multi-step qualification flows reduce commitment rather than increase it at the demo stage.",
+  img:"assets/images/image_demo_exp4_qualifying.png"
+},
+{
+  id:"CS24", sec:"demo", result:"loss",
+  title:"Signup: Email Field vs CTA",
+  url:"justcall.io/signup",
+  hypo:"Placing social sign-up at the top with higher visibility and replacing the email field with a CTA will reduce friction and increase signups.",
+  metrics:[
+    {l:"E-verified Lift", v:"−18.5%", p:false},
+    {l:"M-verified Lift", v:"−19.9%", p:false},
+    {l:"Total Lift",      v:"−19.0%", p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"4,780"},
+    {k:"Total (Control)",      v:"530"},
+    {k:"Traffic (Variant)",    v:"4,874"},
+    {k:"Total (Variant)",      v:"438"},
+    {k:"E-verified (Control)", v:"496"},
+    {k:"E-verified (Variant)", v:"412 (−18.5%)",c:"neg"},
+    {k:"M-verified (Control)", v:"294"},
+    {k:"M-verified (Variant)", v:"240 (−19.9%)",c:"neg"},
+    {k:"Total Lift",           v:"−19.0%",c:"neg"}
+  ],
+  insight:"Removing the email field for a CTA introduced an extra step. Direct email input provides lower friction than a CTA requiring an additional click.",
+  img:"assets/images/image_cs24_signup_email.png"
+},
+{
+  id:"CS25", sec:"demo", result:"loss",
+  title:"Signup: SSO and Email Ordering",
+  url:"justcall.io/signup",
+  hypo:"Placing social sign-up at the top with higher visibility will reduce friction and increase signups.",
+  metrics:[
+    {l:"E-verified Lift", v:"−13.9%", p:false},
+    {l:"M-verified Lift", v:"−12.4%", p:false},
+    {l:"Total Lift",      v:"−14.1%", p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"3,136"},
+    {k:"Total (Control)",      v:"310"},
+    {k:"Traffic (Variant)",    v:"3,296"},
+    {k:"Total (Variant)",      v:"280"},
+    {k:"E-verified (Control)", v:"294"},
+    {k:"E-verified (Variant)", v:"266 (−13.9%)",c:"neg"},
+    {k:"M-verified (Control)", v:"202"},
+    {k:"M-verified (Variant)", v:"186 (−12.4%)",c:"neg"},
+    {k:"Total Lift",           v:"−14.1%",c:"neg"}
+  ],
+  insight:"Reordering SSO above email input did not reduce friction — users preferred the familiar email-first flow. SSO prominence did not compensate for disrupted form habits.",
+  img:"assets/images/image62.png"
+},
+{
+  id:"CS26", sec:"demo", result:"loss",
+  title:"Signup: Left-Aligned Form + UI BG",
+  url:"justcall.io/signup",
+  hypo:"Placing the form on the left side with UI dashboard on the right will make signup feel immediate and product-focused while maintaining form prominence.",
+  metrics:[
+    {l:"E-verified Lift", v:"−4%", p:false},
+    {l:"M-verified Lift", v:"−3%", p:false},
+    {l:"Total Lift",      v:"−4%", p:false}
+  ],
+  rows:[
+    {k:"Traffic (Control)",    v:"6,890"},
+    {k:"Total (Control)",      v:"768"},
+    {k:"Traffic (Variant)",    v:"6,860"},
+    {k:"Total (Variant)",      v:"930 (overall)"},
+    {k:"E-verified (Control)", v:"724"},
+    {k:"E-verified (Variant)", v:"690 (−4%)",c:"neg"},
+    {k:"M-verified (Control)", v:"528"},
+    {k:"M-verified (Variant)", v:"510 (−3%)",c:"neg"}
+  ],
+  insight:"Left-aligned form with dashboard background produced marginal negative impact. Visual product context did not overcome the layout disruption to familiar UX patterns.",
+  img:"assets/images/image_cs26_signup_left.png"
+},
+{
+  id:"Mobile-Exp5", sec:"demo", result:"win",
+  title:"Mobile Thumb Zone Placement",
+  url:"Mobile pages · Early 2024",
+  hypo:"Placing the CTA within the thumb zone on mobile could drive more leads.",
+  metrics:[
+    {l:"Avg Monthly Lift", v:"+15 demos/mo", p:true}
+  ],
+  rows:[
+    {k:"Period",            v:"Early 2024"},
+    {k:"Avg monthly gain",  v:"15 additional demo form submissions per month",c:"pos"},
+    {k:"Validation",        v:"Confirmed at launch"}
+  ],
+  insight:"Access is conversion. Thumb-zone placement requires no intent change — only friction removal. A CTA people can reach without effort is a CTA people use.",
+  img:"assets/images/image_mobile_exp5_thumb_zone.png"
+},
+{
+  id:"Mobile-Exp6", sec:"demo", result:"win",
+  title:"Mobile Nav Placement CTA",
+  url:"Mobile pages · Mid 2025",
+  hypo:"Placing the Demo CTA in the navbar — always visible while scrolling — would outperform a thumb-zone sticky CTA suppressed by the cookie banner.",
+  metrics:[
+    {l:"Total Demo Submissions", v:"782",  p:true},
+    {l:"Org Size 100+",          v:"354",  p:true}
+  ],
+  headers:["Demo","Demo form submission","Org size 100+"],
+  rows:[
+    {k:"2025", v:"629",  v2:"283"},
+    {k:"2026", v:"153",  v2:"71"},
+    {k:"Total",v:"782",  c:"pos", v2:"354", c2:"pos"}
+  ],
+  insight:"The navbar CTA's persistent visibility won because the cookie banner was suppressing the thumb-zone CTA by default. A CTA that always renders outperforms one that conditionally appears.",
+  img:"assets/images/image_mobile_exp6_nav_cta.png"
+},
+{
+  id:"Mobile-Exp7", sec:"demo", result:"win",
+  title:"Replace Trial CTA Sitewide (Mobile)",
+  url:"Mobile pages (sitewide) · 2026",
+  hypo:"Replacing the mobile Demo CTA text from a trial-focused message to a more direct/demo-oriented message will increase mobile conversion rate, because mobile users prefer quick, low-friction actions like booking a short demo over starting a trial.",
+  metrics:[
+    {l:"2026 Mobile Demos", v:"400+", p:true}
+  ],
+  rows:[
+    {k:"Period",       v:"2026"},
+    {k:"Mobile Demos", v:"400+",c:"pos"}
+  ],
+  insight:"Demo-oriented language on mobile reduces perceived commitment and aligns with mobile users' preference for quick, low-friction actions. Trial language implies higher time investment on small screens.",
+  img:"assets/images/image_mobile_exp7_replace_trial.png"
+},
+{
+  id:"Demo-Exp8", sec:"demo", result:"win",
+  title:"Exit Popup: Pricing Page",
+  url:"justcall.io/pricing/ · 2024 onwards",
+  hypo:"Exit intent popups fire when a visitor moves their cursor toward the browser tab — signalling departure. The pricing page is the highest-intent page on the site: one more touchpoint with a low-commitment offer (book a demo vs. commit to a plan) converts visitors who would otherwise leave as untagged lost traffic.",
+  metrics:[
+    {l:"Total Demo Leads", v:"2,214", p:true},
+    {l:"ICP 100+ Leads",   v:"742",   p:true}
+  ],
+  rows:[
+    {k:"2024 — Demo FF",        v:"708"},
+    {k:"2024 — ICP 100+",       v:"264"},
+    {k:"2025 — Demo FF",        v:"1,740"},
+    {k:"2025 — ICP 100+",       v:"584"},
+    {k:"2026 — Demo FF",        v:"566"},
+    {k:"2026 — ICP 100+",       v:"382"},
+    {k:"TOTAL Demo FF",         v:"2,214",c:"pos"},
+    {k:"TOTAL ICP 100+",        v:"742",c:"pos"}
+  ],
+  insight:"A pricing page visitor has already evaluated — exit intent catches them at departure and reframes the ask from 'commit to a plan' to 'talk to someone first.' Lower friction, higher intent match.",
+  img:"assets/images/image_demo_exp8_exit_popup.png"
+},
+{
+  id:"Contact-Us", sec:"demo", result:"learning",
+  title:"Contact Us Page",
+  url:"justcall.io/contact-us · May 2025–April 2026",
+  hypo:"The Contact Us page as a net-new demo entry point evolved through three distinct versions as we learned what offer mix, copy, and channel combination converted best.",
+  metrics:[
+    {l:"V1 Submissions",  v:"1,006 (201 ICP)"},
+    {l:"V2 AI SDR Calls", v:"280"},
+    {l:"V3 S2 Opps",      v:"16"}
+  ],
+  rows:[
+    {k:"V1 May–Dec 2025 — Users",      v:"11,740"},
+    {k:"V1 May–Dec 2025 — Submissions",v:"1,006"},
+    {k:"V1 ICP 100+",                  v:"402"},
+    {k:"V1 S2",                        v:"40"},
+    {k:"V2 Jan–Mar 20 2026 — Users",   v:"2,260"},
+    {k:"V2 Submissions",               v:"514"},
+    {k:"V2 ICP 100+",                  v:"100"},
+    {k:"V2 S2",                        v:"0"},
+    {k:"V2 AI SDR calls",              v:"280 (11 warm transfers)"},
+    {k:"V2 SMS opt-ins",               v:"72 (Text Me path)"},
+    {k:"V2 Demos booked",              v:"54 (Talk to a Human)"},
+    {k:"V3 Mar 20–Apr 27 — Users",     v:"948"},
+    {k:"V3 Submissions",               v:"150"},
+    {k:"V3 ICP 100+",                  v:"62"},
+    {k:"V3 S2",                        v:"16",c:"pos"},
+    {k:"V3 Change",                    v:"Restricted navbar visibility to ICP regions only — reduced volume, improved quality"}
+  ],
+  insight:"Multi-path routing (AI SDR + SMS + direct booking) serves different visitor commitment levels. Restricting to ICP regions dramatically improved lead quality over raw volume.",
+  img:"assets/images/image_contact_us_evolution.png"
+},
+
+/* ── VIII. PRICING ──────────────────────────────────── */
+{
+  id:"CS19", sec:"pricing", result:"win",
+  title:"Inline 'Get a Quote' Form",
+  url:"justcall.io/pricing/",
+  hypo:"Embedding the 'Get a Quote' form directly on the pricing card reduces friction and increases completions compared to a redirect.",
+  metrics:[
+    {l:"Control Form Fills",     v:"92"},
+    {l:"Challenger Form Fills",  v:"582", p:true},
+    {l:"S2 Opportunities",       v:"42",  p:true}
+  ],
+  rows:[
+    {k:"Control Form Fills",    v:"92"},
+    {k:"Challenger Form Fills", v:"582",c:"pos"},
+    {k:"Trials",                v:"—"},
+    {k:"S2 Opps",               v:"42",c:"pos"}
+  ],
+  insight:"Frictionless, on-page forms massively outperform redirect flows for high-intent visitors — eliminating the extra click was the crucial unlock.",
+  img:"assets/images/image_cs19_get_quote.png"
+}
+];
+
+const PATTERNS = {
+  works:[
+    { label:"FORM DESIGN",   title:"The form is the product.",       desc:"On a dedicated demo page, surrounding content competes for attention at the decision moment. The 15% lift came from removing, not adding." },
+    { label:"CTA PLACEMENT", title:"Intent-first, always.",          desc:"Demo CTAs only generate demos at intent-matched moments. Adding them to trial-intent pages costs signups without creating demos." },
+    { label:"MOBILE",        title:"Access is conversion.",          desc:"Demos don't always require intent change — they require friction removal. A CTA people can reach without effort is a CTA people use." },
+    { label:"BEHAVIOURAL",   title:"Abandon equals high intent.",    desc:"1,107 demo leads from exit intent proves it. Pricing-page abandoners are the highest-intent visitors on the site." },
+    { label:"CTA LANGUAGE",  title:"Human, not process.",            desc:"'Talk to a Human' re-frames the ask from form submission to person access. +63% CR — the cleanest test in the series." },
+    { label:"MULTI-PATH",    title:"Let visitors choose speed.",     desc:"AI SDR (140) + SMS (36) together exceeded demo bookings (27). Different visitors want different commitment levels." },
+    { label:"VISUALS",       title:"Specificity over stock.",        desc:"Country-specific phone numbers beat generic agent imagery. Functional visuals outperform decorative." },
+    { label:"HERO",          title:"Static beats motion.",           desc:"Video heroes and motion-heavy backgrounds consistently underperformed clear static promises." },
+    { label:"LOCALISATION",  title:"Built for them.",               desc:"Region-specific pages (currency, formats, local proof) lifted CR by 27-35% on UK pages. AU same template lost −26%." }
+  ],
+  doesnt:[
+    { label:"DUAL PRIMARY CTAs",   title:"Choice overload kills conversion.",   desc:"Trial alongside Demo created choice overload at page level (CS04) and site level (Exp 9). The dominant CTA always wins." },
+    { label:"MOTION IN HERO",      title:"Video heroes underperform.",          desc:"Video heroes and video backgrounds underperformed static alternatives in every head-to-head test." },
+    { label:"PROVOCATIVE HOOKS",   title:"Provocation without substance loses.", desc:"Clickbait-style copy on competitor pages underperformed rational ROI/comparison by 66%. Clarity wins." }
+  ]
+};
+
+/* ─── HELPERS ──────────────────────────────────────── */
+const bC = r => ({win:"badge-win",loss:"badge-loss",learning:"badge-learning",mixed:"badge-mixed",pending:"badge-pending"}[r]||"badge-learning");
+const bL = r => ({win:"✓ WIN",loss:"✗ LOSS",learning:"◎ LEARNING",mixed:"⇌ MIXED",pending:"⧖ PENDING"}[r]||"LEARNING");
+
+/* ─── RENDER SURFACES ─────────────────────────────── */
+/* surfGrid is hardcoded in HTML */
+
+/* ─── RENDER EXPERIMENTS ──────────────────────────── */
+document.getElementById("csGrid").innerHTML = EXP.map(e=>{
+  const r = e.result;
+  const bc = r==='win'?'bw':r==='loss'?'bl':'bo';
+  const bl = r==='win'?'✓ Win':r==='loss'?'✗ Loss':r==='learning'?'◎ Learning':r==='mixed'?'⇌ Mixed':'⧖ Pending';
+  const lift = e.metrics&&e.metrics[0] ? e.metrics[0].v : '—';
+  const isNeg = r==='loss';
+  const desc = e.insight || (e.hypo.length>120?e.hypo.slice(0,120)+'…':e.hypo);
+  const chips = (e.metrics||[]).slice(0,3).map(m=>{
+    const cls = m.p===true?'pos':m.p===false?'neg':'';
+    return `<div class="ec-chip"><span class="ec-chip-v ${cls}">${m.v}</span><span class="ec-chip-l">${m.l}</span></div>`;
+  }).join('');
+  return `<div class="ec in" data-sec="${e.sec}" data-res="${r}" onclick="openLb('${e.id}')">
+  <div class="ec-top">
+    <span class="ec-surface">${SEC[e.sec]||''}</span>
+    <span class="badge ${bc}">${bl}</span>
+  </div>
+  <div class="ec-title">${e.title}</div>
+  <p class="ec-desc">${desc}</p>
+  ${chips?`<div class="ec-metrics">${chips}</div>`:''}
+  <span class="ec-arr">↗</span>
+</div>`;
+}).join("");
+bindCursor(); // rebind after dynamic render
+
+/* ─── RENDER PATTERNS ─────────────────────────────── */
+if(document.getElementById("worksCol")) document.getElementById("worksCol").innerHTML += PATTERNS.works.map(p=>`
+<div class="pat-card works">
+  <div class="pat-label">${p.label}</div>
+  <div class="pat-title">${p.title}</div>
+  <div class="pat-desc">${p.desc}</div>
+</div>`).join("");
+
+if(document.getElementById("doesntCol")) document.getElementById("doesntCol").innerHTML += PATTERNS.doesnt.map(p=>`
+<div class="pat-card doesnt">
+  <div class="pat-label">${p.label}</div>
+  <div class="pat-title">${p.title}</div>
+  <div class="pat-desc">${p.desc}</div>
+</div>`).join("");
+
+/* ─── COUNTER ANIMATION ───────────────────────────── */
+const counters = document.querySelectorAll("[data-target]");
+const cObs = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    const el = en.target;
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix||"";
+    const dur = 1800, start = Date.now();
+    (function tick(){
+      const t = Math.min((Date.now()-start)/dur,1);
+      const ease = 1-Math.pow(1-t,3);
+      el.textContent = Math.round(ease*target).toLocaleString()+suffix;
+      if(t<1) requestAnimationFrame(tick);
+    })();
+    cObs.unobserve(el);
+  });
+},{threshold:0});
+counters.forEach(c=>cObs.observe(c));
+
+/* ─── FILTERS ─────────────────────────────────────── */
+let activeSec="all", activeRes=null;
+
+function applyFilters(){
+  document.querySelectorAll(".ec").forEach(card=>{
+    const secOk = activeSec==="all" || card.dataset.sec===activeSec;
+    const resOk = !activeRes || card.dataset.res===activeRes;
+    const show = secOk&&resOk;
+    card.classList.toggle("hide",!show);
+    if(show) card.classList.add("in"); // ensure visible after filter
+  });
+}
+
+document.addEventListener("click", e => {
+  const fbtn = e.target.closest(".fbtn");
+  if(fbtn){
+    document.querySelectorAll(".fbtn").forEach(b=>b.classList.remove("on"));
+    fbtn.classList.add("on");
+    activeSec = fbtn.dataset.sec;
+    applyFilters(); return;
+  }
+  const rbtn = e.target.closest(".rbtn");
+  if(rbtn){
+    if(rbtn.classList.contains("on")){
+      rbtn.classList.remove("on"); activeRes=null;
+    } else {
+      document.querySelectorAll(".rbtn").forEach(b=>b.classList.remove("on"));
+      rbtn.classList.add("on"); activeRes=rbtn.dataset.res;
+    }
+    applyFilters();
+  }
+});
+
+/* ─── LIGHTBOX ────────────────────────────────────── */
+let lbIndex = 0;
+
+function getVisibleExp(){
+  // Return experiments matching active filters (or all if no filter)
+  return EXP.filter(e=>{
+    const card = document.querySelector(`.cs-card[data-sec="${e.sec}"][data-res="${e.result}"]`);
+    // Check if any card for this exp is visible
+    const cards = document.querySelectorAll(`.cs-card`);
+    for(const c of cards){
+      if(c.onclick && c.onclick.toString().includes(e.id)){
+        return !c.classList.contains("hide");
+      }
+    }
+    return true;
+  });
+}
+
+function updateLbNav(idx, total){
+  const prev = document.getElementById("lbPrev");
+  const next = document.getElementById("lbNext");
+  const ctr  = document.getElementById("lbCounter");
+  prev.disabled = idx === 0;
+  next.disabled = idx === total - 1;
+  ctr.textContent = `${idx + 1} / ${total}`;
+}
+
+function renderLb(e){
+  // Left: image
+  const imgCol = document.getElementById("lbImgCol");
+  imgCol.innerHTML = e.img
+    ? `<img src="${e.img}" alt="${e.title}" style="width:100%;display:block;"/>`
+    : `<div class="lb-no-img">📊</div>`;
+  // Right: content (keep close button)
+  const closeBtn = document.getElementById("lbClose");
+  document.getElementById("lbContent").innerHTML = `
+<div class="lb-head" style="margin-bottom:16px;margin-top:8px;">
+  <span class="cs-badge ${bC(e.result)}" style="position:static">${bL(e.result)}</span>
+</div>
+<div class="lb-title">${e.title}</div>
+<div class="lb-hypo">"${e.hypo}"</div>
+${buildTable(e.rows, e.headers)}
+<div class="lb-insight">
+  <div class="lb-il">Key Insight</div>
+  <div class="lb-it">${e.insight}</div>
+</div>`;
+  document.getElementById("lbContent").prepend(closeBtn);
+  document.getElementById("lbContent").scrollTop = 0;
+}
+
+function buildTable(rows, headers){
+  if(!rows||!rows.length) return "";
+  if(rows.some(r=>r.v2!==undefined)){
+    const col=c=>c==="pos"?"var(--win)":c==="neg"?"var(--loss)":"inherit";
+    const h=headers||["Metric","Value",""];
+    return `<table class="lb-table"><thead><tr><th>${h[0]}</th><th style="text-align:right">${h[1]}</th><th style="text-align:right">${h[2]}</th></tr></thead><tbody>${
+      rows.map(r=>`<tr><td style="color:var(--muted);font-weight:600">${r.k}</td><td style="font-weight:600;text-align:right;color:${col(r.c)}">${r.v}</td><td style="font-weight:600;text-align:right;color:${col(r.c2)}">${r.v2}</td></tr>`).join("")
+    }</tbody></table>`;
+  }
+  const IS_C  = k=>/\b(Control|Ctrl)\b/i.test(k)&&!/\b(Challenger|Chall|Variant|Var)\b/i.test(k);
+  const IS_CH = k=>/\b(Challenger|Chall|Variant|Var)\b/i.test(k)&&!/\b(Control|Ctrl)\b/i.test(k);
+  const clean = k=>k
+    .replace(/\s*\((Control|Ctrl|Challenger|Chall|Variant|Var)\)/gi,"")
+    .replace(/^(Control|Ctrl)\s+/i,"")
+    .replace(/^(Challenger|Chall|Variant|Var)\s+/i,"")
+    .replace(/\s+(Control|Ctrl)\b/i,"")
+    .replace(/\s+(Challenger|Chall|Variant|Var)\b/i,"")
+    .replace(/\bMV\s+(Control|Challenger)\b/i,"MV")
+    .trim();
+  const ctrlMap={},challMap={},order=[],seen=new Set();
+  rows.forEach(r=>{
+    if(IS_C(r.k)){
+      const b=clean(r.k); ctrlMap[b]=r;
+      if(!seen.has(b)){order.push({type:"pair",b});seen.add(b);}
+    } else if(IS_CH(r.k)){
+      challMap[clean(r.k)]=r;
+    } else {
+      order.push({type:"single",row:r});
+    }
+  });
+  const hasPairs=order.some(o=>o.type==="pair"&&ctrlMap[o.b]&&challMap[o.b]);
+  if(!hasPairs) return `<table class="lb-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>${
+    rows.map(r=>`<tr><td style="color:var(--muted)">${r.k}</td><td style="font-weight:600;color:${r.c==="pos"?"var(--win)":r.c==="neg"?"var(--loss)":"var(--text)"}">${r.v}</td></tr>`).join("")
+  }</tbody></table>`;
+  const col=c=>c==="pos"?"var(--win)":c==="neg"?"var(--loss)":"inherit";
+  const body=order.map(o=>{
+    if(o.type==="pair"){
+      const c=ctrlMap[o.b],ch=challMap[o.b];
+      if(!c||!ch) return "";
+      return `<tr><td style="color:var(--muted)">${o.b||c.k}</td><td>${c.v}</td><td style="color:${col(ch.c)};font-weight:${ch.c?"700":"500"}">${ch.v}</td></tr>`;
+    }
+    const r=o.row;
+    return `<tr><td style="color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding-top:14px" colspan="2">${r.k}</td><td style="color:${col(r.c)};font-weight:700;padding-top:14px">${r.v}</td></tr>`;
+  }).join("");
+  return `<table class="lb-table"><thead><tr><th>Metric</th><th style="text-align:right">Control</th><th style="text-align:right">Challenger</th></tr></thead><tbody>${body}</tbody></table>`;
+}
+
+function openLb(id){
+  const vis = EXP; // navigate all experiments
+  const idx = vis.findIndex(x=>x.id===id);
+  if(idx===-1) return;
+  lbIndex = idx;
+  renderLb(vis[idx]);
+  updateLbNav(idx, vis.length);
+  const ov = document.getElementById("lbOverlay");
+  ov.classList.add("open");
+  document.body.style.overflow="hidden";
+}
+
+function closeLb(){
+  document.getElementById("lbOverlay").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+document.getElementById("lbPrev").addEventListener("click",()=>{
+  if(lbIndex > 0){ lbIndex--; renderLb(EXP[lbIndex]); updateLbNav(lbIndex, EXP.length); }
+});
+document.getElementById("lbNext").addEventListener("click",()=>{
+  if(lbIndex < EXP.length-1){ lbIndex++; renderLb(EXP[lbIndex]); updateLbNav(lbIndex, EXP.length); }
+});
+document.getElementById("lbClose").addEventListener("click",closeLb);
+document.getElementById("lbOverlay").addEventListener("click",e=>{
+  if(e.target===document.getElementById("lbOverlay")) closeLb();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeLb();
+  if(!document.getElementById("lbOverlay").classList.contains("open")) return;
+  if(e.key==="ArrowLeft"  && lbIndex > 0)              { lbIndex--; renderLb(EXP[lbIndex]); updateLbNav(lbIndex, EXP.length); }
+  if(e.key==="ArrowRight" && lbIndex < EXP.length-1)   { lbIndex++; renderLb(EXP[lbIndex]); updateLbNav(lbIndex, EXP.length); }
+});
+
+// cursor: defined above
+
+
+// Scroll reveal
+const apObs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 55);
+      apObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.ap').forEach(el => apObs.observe(el));
+bindCursor(); // final bind
+
+
+/* ── SCROLL TEXT ANIMATION ─────────────────────────── */
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function splitWords(el){
+    const raw = el.innerHTML;
+    // Preserve <em> and <br> tags, split only text nodes
+    const temp = document.createElement('div');
+    temp.innerHTML = raw;
+    function processNode(node){
+      if(node.nodeType === 3){ // text node
+        const words = node.textContent.split(/(\s+)/);
+        const frag = document.createDocumentFragment();
+        words.forEach(w => {
+          if(/^\s+$/.test(w)){
+            frag.appendChild(document.createTextNode(w));
+          } else if(w){
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = w;
+            frag.appendChild(span);
+          }
+        });
+        node.parentNode.replaceChild(frag, node);
+      } else if(node.nodeType === 1 && node.tagName !== 'SPAN'){
+        Array.from(node.childNodes).forEach(processNode);
+      }
+    }
+    Array.from(temp.childNodes).forEach(processNode);
+    el.innerHTML = '';
+    el.appendChild(temp);
+    el.classList.add('reveal-text');
+  }
+
+  function staggerWords(el, baseDelay){
+    el.querySelectorAll('.word').forEach((w, i) => {
+      w.style.transitionDelay = (baseDelay + i * 0.045) + 's';
+    });
+  }
+
+  if(!reduced){
+    // Target: h1, h2 section headings, method titles, surface names
+    const headings = document.querySelectorAll(
+      '.hero h1, .sec-h2, h2.c-hl, .m-title-p, .surf-name-p'
+    );
+    headings.forEach(el => {
+      splitWords(el);
+      staggerWords(el, 0);
+    });
+
+    // Target: sub-paragraphs — fade as single line
+    document.querySelectorAll('.method-intro-p, .surfaces-intro-p, .hero-sub, .c-sub-p').forEach(el => {
+      el.classList.add('reveal-line');
+    });
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-text, .reveal-line').forEach(el => obs.observe(el));
+  }
+})();
+
+</script>
+</body>
+</html>

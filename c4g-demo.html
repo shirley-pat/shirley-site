@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Champions4Good — Design System</title>
+  <link rel="stylesheet" href="champions-c4g-style.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #062629; color: #F5F5F0; font-family: 'Space Grotesk', sans-serif; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 2rem; }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: rgba(245,245,240,.35);
+      margin: 3rem 0 1rem; border-bottom: 1px solid rgba(245,245,240,.08); padding-bottom: .75rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page c4g-scope">
+
+  <!-- HERO TEXT -->
+  <div style="margin-bottom:3rem;">
+    <span class="c4g-label">Champions4Good</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,7vw,96px);line-height:1.05;letter-spacing:-.03em;color:#F5F5F0;margin-bottom:1rem;">
+      Your Network Of<br><span class="accent-mint">Game Changers</span>
+    </h1>
+    <p style="font-size:17px;color:rgba(245,245,240,.5);max-width:520px;line-height:1.7;">
+      A platform connecting impact-driven leaders. Every experiment documented, every win earned.
+    </p>
+  </div>
+
+  <!-- STAT NUMBERS -->
+  <p class="section-title">Stat Numbers</p>
+  <div class="row">
+    <div style="text-align:center;padding:16px 24px;">
+      <p class="stat-number mint">60+</p>
+      <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,245,240,.35);font-family:'Space Grotesk',sans-serif;">Tests Run</span>
+    </div>
+    <div style="text-align:center;padding:16px 24px;">
+      <p class="stat-number orange">12</p>
+      <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,245,240,.35);font-family:'Space Grotesk',sans-serif;">Surfaces</span>
+    </div>
+    <div style="text-align:center;padding:16px 24px;">
+      <p class="stat-number turquoise">340+</p>
+      <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,245,240,.35);font-family:'Space Grotesk',sans-serif;">Demo Leads</span>
+    </div>
+    <div style="text-align:center;padding:16px 24px;">
+      <p class="stat-number yellow">5</p>
+      <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,245,240,.35);font-family:'Space Grotesk',sans-serif;">Years</span>
+    </div>
+  </div>
+
+  <!-- BADGES -->
+  <p class="section-title">Badges</p>
+  <div class="row">
+    <span class="badge mint">✓ Win</span>
+    <span class="badge orange">Active</span>
+    <span class="badge purple">Featured</span>
+    <span class="badge pink">Hot</span>
+    <span class="badge yellow">New</span>
+    <span class="badge turquoise">Live</span>
+    <span class="badge loss">✗ Loss</span>
+    <span class="badge learning">◎ Learning</span>
+  </div>
+
+  <!-- BUTTONS -->
+  <p class="section-title">Buttons</p>
+  <div class="row">
+    <button class="btn-c4g">Join Now</button>
+    <button class="btn-c4g orange">Get Started</button>
+    <button class="btn-c4g purple">Learn More</button>
+    <button class="btn-c4g pink">Apply</button>
+    <button class="btn-c4g yellow">Explore</button>
+    <button class="btn-c4g turquoise">Connect</button>
+    <button class="btn-c4g outline">View All →</button>
+  </div>
+
+  <!-- CARDS -->
+  <p class="section-title">Cards</p>
+  <div class="c4g-grid-3" style="margin-bottom:2rem;">
+    <div class="card-accent mint">
+      <span class="c4g-label">01 / Impact</span>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#F5F5F0;font-size:1.4rem;margin-bottom:.5rem;">Find the friction.</h3>
+      <p style="font-size:14px;color:rgba(245,245,240,.5);">Heuristic analysis, heatmaps, session replay. The data tells me where users hesitate.</p>
+      <div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+        <p class="stat-number mint" style="font-size:2rem;">+34%</p>
+        <span class="badge win">✓ Win</span>
+      </div>
+    </div>
+
+    <div class="card-accent orange">
+      <span class="c4g-label orange">02 / Hypothesis</span>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#F5F5F0;font-size:1.4rem;margin-bottom:.5rem;">Problem to mechanism.</h3>
+      <p style="font-size:14px;color:rgba(245,245,240,.5);">Every test gets a written hypothesis tying observed friction to a proposed mechanism.</p>
+      <div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+        <p class="stat-number orange" style="font-size:2rem;">+28%</p>
+        <span class="badge orange">Active</span>
+      </div>
+    </div>
+
+    <div class="card-accent turquoise">
+      <span class="c4g-label turquoise">03 / Test</span>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#F5F5F0;font-size:1.4rem;margin-bottom:.5rem;">Controlled, instrumented.</h3>
+      <p style="font-size:14px;color:rgba(245,245,240,.5);">VWO / Optimizely with data-layer integrity. No dirty splits, no eyeballed wins.</p>
+      <div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+        <p class="stat-number turquoise" style="font-size:2rem;">+19%</p>
+        <span class="badge turquoise">Live</span>
+      </div>
+    </div>
+
+    <div class="card-accent purple">
+      <span class="c4g-label" style="color:#9B8EC4;">04 / Network</span>
+      <h2 class="accent-purple" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem;margin-bottom:.5rem;">Section Title</h2>
+      <p style="font-size:14px;color:rgba(245,245,240,.5);">Connect with impact-driven leaders who move numbers and share what they learn.</p>
+    </div>
+
+    <div class="card-accent pink">
+      <span class="c4g-label" style="color:#FF69B4;">05 / Community</span>
+      <h2 class="accent-pink" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem;margin-bottom:.5rem;">Section Title</h2>
+      <p style="font-size:14px;color:rgba(245,245,240,.5);">A platform for experiments that matter — wins and losses both documented honestly.</p>
+    </div>
+
+    <div class="card-accent yellow">
+      <span class="c4g-label" style="color:#FFD700;">06 / Growth</span>
+      <h2 class="accent-yellow" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem;margin-bottom:.5rem;">Section Title</h2>
+      <p style="font-size:14px;color:rgba(245,245,240,.5);">Scale what works. Kill what doesn't. Document everything for the next person.</p>
+    </div>
+  </div>
+
+  <!-- LABELS -->
+  <p class="section-title">Labels / Eyebrows</p>
+  <div class="row" style="flex-direction:column;gap:6px;">
+    <span class="c4g-label">Default — Mint</span>
+    <span class="c4g-label orange">Orange Label</span>
+    <span class="c4g-label purple">Purple Label</span>
+    <span class="c4g-label turquoise">Turquoise Label</span>
+  </div>
+
+  <!-- INPUT -->
+  <p class="section-title">Form Input</p>
+  <div style="max-width:400px;">
+    <input class="c4g-input" type="email" placeholder="your@email.com" />
+    <div style="margin-top:12px;">
+      <button class="btn-c4g" style="width:100%;">Join the Network →</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
