@@ -1357,6 +1357,209 @@
     }
     /* ══════════════════════════════════════════════════════════ */
 
+  
+    /* ══ AI TOOLS SECTION ══════════════════════════════════════ */
+    .tools-wrap {
+      padding: 7rem 3rem; border-top: 1px solid rgba(245,243,238,.07);
+      background: var(--bg);
+    }
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(245,243,238,.07); margin-top: 3.5rem;
+    }
+    .tool-card {
+      background: var(--bg); padding: 2.5rem 2.5rem 2rem;
+      position: relative; overflow: hidden;
+      transition: background .25s;
+    }
+    .tool-card:hover { background: var(--card); }
+    .tool-num {
+      font-family: 'DM Mono', monospace; font-size: .6rem;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(245,243,238,.25); margin-bottom: 1rem; display: block;
+    }
+    .tool-name {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 1.25rem; color: var(--text); margin-bottom: .5rem;
+      letter-spacing: -0.02em;
+    }
+    .tool-desc {
+      font-size: .88rem; color: rgba(245,243,238,.5);
+      line-height: 1.65; margin-bottom: 1.5rem;
+    }
+    .tool-points {
+      list-style: none; display: flex; flex-direction: column; gap: .4rem;
+      margin-bottom: 1.5rem;
+    }
+    .tool-points li {
+      font-size: .78rem; color: rgba(245,243,238,.4); line-height: 1.5;
+      padding-left: 1rem; position: relative;
+    }
+    .tool-points li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--primary); font-size: .7rem;
+    }
+    .tool-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tool-tag {
+      font-family: 'DM Mono', monospace; font-size: .58rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      border: 1px solid rgba(245,243,238,.12); color: rgba(245,243,238,.3);
+      padding: 3px 10px; border-radius: 100px;
+    }
+    @media (max-width: 768px) {
+      .tools-grid { grid-template-columns: 1fr; }
+      .tools-wrap { padding: 5rem 1.5rem; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
+  
+    /* ══ MOBILE OPTIMISATION ════════════════════════════════════ */
+
+    /* Hide custom cursor on touch devices */
+    @media (hover: none) {
+      body { cursor: auto !important; }
+      #cur { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+
+      /* NAV */
+      nav {
+        padding: 1rem 1.25rem !important;
+        justify-content: space-between !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-logo { font-size: .95rem !important; }
+      .nav-cta {
+        font-size: .58rem !important;
+        padding: .45rem 1rem !important;
+        letter-spacing: .08em !important;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 0 1.25rem 3rem !important;
+        min-height: 100svh !important;
+      }
+      .hero h1 {
+        font-size: clamp(44px, 12vw, 72px) !important;
+        margin-bottom: 2rem !important;
+      }
+      .hero-watermark {
+        font-size: clamp(60px, 28vw, 140px) !important;
+      }
+      .hero-eyebrow { font-size: .6rem !important; }
+      .hero-row { flex-direction: column; gap: 2rem; }
+      .hero-sub { max-width: 100%; font-size: .85rem !important; }
+      .hero-stats {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
+        justify-content: flex-start !important;
+      }
+      .stat { text-align: left !important; }
+      .stat-n { font-size: 2rem !important; }
+      .stat-l { font-size: .55rem !important; }
+      .btn-y, .btn-g {
+        font-size: .65rem !important;
+        padding: .75rem 1.5rem !important;
+      }
+      .scroll-hint { display: none; }
+
+      /* MARQUEE */
+      .mq-wrap { padding: .8rem 0; }
+
+      /* SECTION PADDING */
+      .about-wrap, .tools-wrap, .method-wrap-p,
+      .surfaces-wrap-p, .section, .contact-section {
+        padding: 4rem 1.25rem !important;
+      }
+
+      /* SECTION HEADINGS */
+      .sec-h2 {
+        font-size: clamp(32px, 10vw, 56px) !important;
+        line-height: 1.05 !important;
+      }
+
+      /* ABOUT */
+      .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      .about-stats { gap: 1.25rem !important; }
+      .about-stat-num { font-size: clamp(28px, 8vw, 44px) !important; }
+      .about-tags { gap: 6px !important; }
+
+      /* TOOLS */
+      .tools-grid { grid-template-columns: 1fr !important; }
+      .tool-card { padding: 1.75rem 1.25rem !important; }
+
+      /* METHOD */
+      .m-grid { grid-template-columns: 1fr !important; }
+      .m-step-p { padding: 2rem 1.25rem !important; }
+      .m-title-p { font-size: 1.1rem !important; }
+
+      /* SURFACES */
+      .surf-grid-p { grid-template-columns: 1fr 1fr !important; }
+
+      /* EXPERIMENTS */
+      .filter-row {
+        gap: 6px !important;
+        margin-bottom: 24px !important;
+      }
+      .fbtn {
+        font-size: .55rem !important;
+        padding: .4rem .75rem !important;
+      }
+      .rbtn {
+        font-size: .55rem !important;
+        padding: .4rem .75rem !important;
+      }
+      .gap { display: none !important; }
+      .exp-grid { grid-template-columns: 1fr !important; }
+      .ec { padding: 1.75rem 1.25rem !important; }
+      .ec-title { font-size: 1.15rem !important; }
+      .ec-lift { font-size: 1.6rem !important; }
+      .ec-metrics { gap: 4px !important; }
+      .ec-chip { padding: .4rem .5rem !important; }
+      .ec-chip-v { font-size: .95rem !important; }
+
+      /* LIGHTBOX */
+      .lb-overlay { padding: 0 !important; align-items: flex-end !important; }
+      .lb-box {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto 1fr !important;
+        max-height: 95svh !important;
+        border-radius: 20px 20px 0 0 !important;
+        max-width: 100% !important;
+      }
+      .lb-img-col {
+        max-height: 35svh !important;
+        position: relative !important;
+      }
+      .lb-content-col {
+        max-height: 60svh !important;
+        padding: 24px 20px !important;
+      }
+      .lb-title { font-size: 1.4rem !important; }
+      .lb-nav { width: 40px !important; height: 40px !important; font-size: 16px !important; }
+      .lb-prev { left: 10px !important; }
+      .lb-next { right: 10px !important; }
+
+      /* CONTACT */
+      .contact-section { padding: 4rem 1.25rem !important; }
+      h2.c-hl { font-size: clamp(36px, 10vw, 64px) !important; }
+      .c-links-p { flex-direction: column !important; gap: .75rem !important; }
+      .c-link-p { padding: .85rem 1.25rem !important; font-size: .72rem !important; }
+
+      /* FOOTER */
+      .footer { padding: 1.5rem 1.25rem !important; }
+    }
+
+    @media (max-width: 480px) {
+      .surf-grid-p { grid-template-columns: 1fr !important; }
+      .hero-stats { gap: 1rem !important; }
+      .stat-n { font-size: 1.75rem !important; }
+    }
+    /* ══════════════════════════════════════════════════════════ */
+
   </style>
 </head>
 <body>
@@ -1383,6 +1586,7 @@
     <a href="#top" class="nav-logo">SHIRLEY <em>PATRICK</em></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#tools">Tools</a></li>
       <li><a href="#method">Method</a></li>
       <li><a href="#surfaces">Surfaces</a></li>
       <li><a href="#experiments">Experiments</a></li>
@@ -1403,7 +1607,7 @@
   <div class="hero-row">
     <div>
       <p class="hero-sub">
-        Sixty-plus experiments across landing pages, demo funnels, signup flows, pricing, and mobile — four years at JustCall. Every test documented: what worked, what didn't, and why.
+        Four years at JustCall. 60+ experiments across every conversion surface — landing pages, demo funnels, signup flows, pricing, and mobile. Every test has a hypothesis. Every result has a why.
       </p>
       <div class="hero-btns">
         <a href="#experiments" class="btn-y">View Experiments →</a>
@@ -1411,6 +1615,10 @@
       </div>
     </div>
     <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-n">340+</span>
+        <span class="stat-l">Demo leads from<br>exit intent alone</span>
+      </div>
       <div class="stat">
         <span class="stat-n">60+</span>
         <span class="stat-l">Tests run across<br>JustCall &amp; Kissflow</span>
@@ -1420,8 +1628,8 @@
         <span class="stat-l">Surfaces optimised —<br>one repeatable system</span>
       </div>
       <div class="stat">
-        <span class="stat-n">340+</span>
-        <span class="stat-l">Demo leads from<br>exit intent alone</span>
+        <span class="stat-n">10+</span>
+        <span class="stat-l">Years in B2B SaaS<br>CRO &amp; growth marketing</span>
       </div>
     </div>
   </div>
@@ -1469,7 +1677,7 @@
       <div class="m-num-p">01</div>
       <div class="m-tag-p">01 / Research</div>
       <div class="m-title-p">Find the friction.</div>
-      <p class="m-body-p">Heuristic analysis, heatmaps, session replay, qualitative review. The data tells me where users hesitate — recordings tell me why.</p>
+      <p class="m-body-p">Heuristic analysis, heatmaps, session replay, qualitative review. The data shows where users hesitate. Recordings show why.</p>
     </div>
     <div class="m-step-p">
       <div class="m-num-p">02</div>
@@ -1486,7 +1694,7 @@
     <div class="m-step-p">
       <div class="m-num-p">04</div>
       <div class="m-tag-p">04 / Learn</div>
-      <div class="m-title-p">Win or learn.</div>
+      <div class="m-title-p">Win or learn</div>
       <p class="m-body-p">Significance review, behavioural read-out, written learning that updates the next test's prior. Losses are evidence, not waste.</p>
     </div>
   </div>
@@ -1506,7 +1714,7 @@
     <div class="surf-tile-p">
       <div class="surf-id-p">II</div>
       <div class="surf-name-p">PPC Landing Pages</div>
-      <div class="surf-note-p">Vertical-specific, ICP-matched, ad-to-page continuity</div>
+      <div class="surf-note-p">Vertical-specific, audience-matched, ad-to-page continuity</div>
     </div>
     <div class="surf-tile-p">
       <div class="surf-id-p">III</div>
@@ -1521,7 +1729,7 @@
     <div class="surf-tile-p">
       <div class="surf-id-p">V</div>
       <div class="surf-name-p">Comparison Pages</div>
-      <div class="surf-note-p">Competitive framing, negative ICP qualification</div>
+      <div class="surf-note-p">Competitive framing, negative audience qualification</div>
     </div>
     <div class="surf-tile-p">
       <div class="surf-id-p">VI</div>
@@ -1622,6 +1830,68 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- AI TOOLS -->
+<section class="tools-wrap" id="tools">
+  <div class="sec-label" data-n="AI ·">Tools I've Built</div>
+  <h2 class="sec-h2 ap">BUILT TO REMOVE<br><em>MANUAL WORK.</em></h2>
+  <div class="tools-grid">
+
+    <div class="tool-card">
+      <span class="tool-num">01</span>
+      <div class="tool-name">Traffic Analyst Agent</div>
+      <p class="tool-desc">Queries GA4 data via BigQuery and surfaces traffic anomalies to Slack every morning — no CSV exports, no manual checking.</p>
+      <ul class="tool-points">
+        <li>Detects drops &gt;20% WoW across channel, region, and landing page</li>
+        <li>Natural language queries: "Why did organic drop this week?"</li>
+        <li>Automated daily alerts with root cause hypothesis + next action</li>
+      </ul>
+      <div class="tool-tags">
+        <span class="tool-tag">Claude Code</span>
+        <span class="tool-tag">BigQuery</span>
+        <span class="tool-tag">GA4</span>
+        <span class="tool-tag">Slack</span>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <span class="tool-num">02</span>
+      <div class="tool-name">CRO Scraper</div>
+      <p class="tool-desc">Weekly automated scans of 290+ SaaS brands and direct competitors — surfacing experiment patterns, CTA changes, and social proof strategies before they become industry standard.</p>
+      <ul class="tool-points">
+        <li>Tracks CTA language, form design, pricing models, and interactive elements</li>
+        <li>Generates ranked experiment hypotheses from competitor signals</li>
+        <li>Stored in Notion with saved views: Must Test, By Widget, Regional Variants</li>
+      </ul>
+      <div class="tool-tags">
+        <span class="tool-tag">Claude Code</span>
+        <span class="tool-tag">Notion</span>
+        <span class="tool-tag">290+ Brands</span>
+        <span class="tool-tag">Weekly Scan</span>
+      </div>
+    </div>
+
+
+
+    <div class="tool-card">
+      <span class="tool-num">03</span>
+      <div class="tool-name">Site Audit Agent</div>
+      <p class="tool-desc">Crawls the live site and catches tracking issues, broken elements, and brand violations before they corrupt experiment data or reach real visitors.</p>
+      <ul class="tool-points">
+        <li>6 check types: typos, brand violations, broken links, images, HTML, content accuracy</li>
+        <li>Flags wrong-intent CTAs, unverified claims, and help doc contradictions</li>
+        <li>Outputs structured report to Google Sheets — severity-ranked, action-ready</li>
+      </ul>
+      <div class="tool-tags">
+        <span class="tool-tag">Claude Opus</span>
+        <span class="tool-tag">Google Sheets</span>
+        <span class="tool-tag">150+ Pages</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1780,17 +2050,13 @@ const EXP = [
     {l:"CR Drop",         v:"-7.8%",  p:false}
   ],
   rows:[
-    {k:"Traffic (Control)",        v:"17,076"},
-    {k:"Traffic (Challenger)",     v:"17,214"},
-    {k:"Free Trial Total (Ctrl)",  v:"934"},
-    {k:"Free Trial Total (Chall)", v:"868"},
-    {k:"Free Trial E-verified",    v:"451 → 415 (−8.7%)",c:"neg"},
-    {k:"Free Trial M-verified",    v:"275 → 284 (−3.9%)",c:"neg"},
-    {k:"Free Trial Lift",          v:"−7.8%",c:"neg"},
-    {k:"Demo Total (Ctrl)",        v:"330"},
-    {k:"Demo Total (Chall)",       v:"312"},
-    {k:"Demo M-verified",          v:"135 → 131 (−3.7%)",c:"neg"},
-    {k:"Demo Lift",                v:"−6.2%",c:"neg"}
+    {k:"Traffic (Control)",       v:"17,076"},
+    {k:"Traffic (Challenger)",    v:"17,214"},
+    {k:"Free Trial (Control)",    v:"934"},
+    {k:"Free Trial (Challenger)", v:"868",      c:"neg"},
+    {k:"Demo FF (Control)",       v:"330"},
+    {k:"Demo FF (Challenger)",    v:"312",      c:"neg"},
+    {k:"Demo Lift",               v:"−6.2%",    c:"neg"}
   ],
   insight:"Choice overload likely diluted primary intent; the single dominant CTA approach performed better than offering two competing paths.",
   img:"assets/images/image_cs04_combined.png"
@@ -1806,17 +2072,13 @@ const EXP = [
     {l:"Demo FF Drop",  v:"−12.4%", p:false}
   ],
   rows:[
-    {k:"Traffic (Control)",       v:"11,316"},
-    {k:"Traffic (Variant)",       v:"11,176"},
-    {k:"Free Trial Total (Ctrl)", v:"516"},
-    {k:"Free Trial Total (Var)",  v:"540"},
-    {k:"Free Trial E-verified",   v:"246 → 261 (+7.9%)",c:"pos"},
-    {k:"Free Trial M-verified",   v:"166 → 179 (+9.7%)",c:"pos"},
-    {k:"Free Trial Lift",         v:"+6.5%",c:"pos"},
-    {k:"Demo Total (Ctrl)",       v:"244"},
-    {k:"Demo Total (Var)",        v:"210"},
-    {k:"Demo M-verified",         v:"79 → 75"},
-    {k:"Demo FF Drop",            v:"−12.4%",c:"neg"}
+    {k:"Traffic (Control)",            v:"11,316"},
+    {k:"Traffic (Challenger)",         v:"11,176"},
+    {k:"Free Trial (Control)",         v:"516"},
+    {k:"Free Trial (Challenger)",      v:"540",    c:"pos"},
+    {k:"Demo Form Fills (Control)",    v:"244"},
+    {k:"Demo Form Fills (Challenger)", v:"210",    c:"neg"},
+    {k:"Demo FF Drop",                 v:"−12.4%", c:"neg"}
   ],
   insight:"Structured scannability nudged trial action without hurting readability. However, demo intent was fragmented — tiles helped free trial, not demo funnel.",
   img:"assets/images/image_cs06_combined.png"
@@ -1966,16 +2228,11 @@ const EXP = [
     {l:"M-Verified Lift",    v:"+63.3%", p:true}
   ],
   rows:[
-    {k:"Traffic (Control)",    v:"836"},
-    {k:"Demo FF (Control)",    v:"56"},
-    {k:"Traffic (Challenger)", v:"750"},
-    {k:"Demo FF (Challenger)", v:"82"},
-    {k:"Demo CR (Control)",    v:"6.70%"},
-    {k:"Demo CR (Challenger)", v:"10.93%"},
-    {k:"MV Control",           v:"54 (6.46%)"},
-    {k:"MV Challenger",        v:"66 (8.80%)"},
-    {k:"Demo FF Lift",         v:"+36.24%",c:"pos"},
-    {k:"M-Verified Lift",      v:"+63.3%",c:"pos"}
+    {k:"Traffic (Control)",       v:"1,960"},
+    {k:"Traffic (Challenger)",    v:"1,860"},
+    {k:"Demo FF (Control)",       v:"143"},
+    {k:"Demo FF (Challenger)",    v:"184",      c:"pos"},
+    {k:"Demo FF Lift",            v:"+28.7%",   c:"pos"}
   ],
   insight:"Conversational CTA matched user intent and reduced perceived friction. 'Talk to a Human' re-frames the ask from form submission to person access — the cleanest test in the series.",
   img:"assets/images/image41.png"
@@ -2034,16 +2291,13 @@ const EXP = [
     {l:"Lift Range",    v:"+28–50%",p:true}
   ],
   rows:[
-    {k:"Traffic (Control)",      v:"24,602"},
-    {k:"Total (Control)",        v:"892"},
-    {k:"Traffic (Challenger)",   v:"2,160"},
-    {k:"Total (Challenger)",     v:"1,344"},
-    {k:"Control CR",             v:"3.63%"},
-    {k:"Challenger CR",          v:"5.46%"},
-    {k:"Signup (Control)",       v:"462 (1.88%)"},
-    {k:"Signup (Challenger)",    v:"596 (2.42%) +28%",c:"pos"},
-    {k:"No-nav Signup",          v:"164 (0.67%) → 92 (0.75%) +12.09%",c:"pos"},
-    {k:"Total Lift",             v:"+50%",c:"pos"}
+    {k:"Traffic (Control)",    v:"24,602"},
+    {k:"Traffic (Challenger)",  v:"22,160"},
+    {k:"Signups (Control)",     v:"892"},
+    {k:"Signups (Challenger)",  v:"1,344",    c:"pos"},
+    {k:"CR (Control)",          v:"3.63%"},
+    {k:"CR (Challenger)",       v:"5.46%",    c:"pos"},
+    {k:"Total Lift",            v:"+50%",     c:"pos"}
   ],
   insight:"Ad-to-LP message match combined with fewer exit points significantly improved yield from paid traffic.",
   img:"assets/images/image_cs13_combined.png"
@@ -2123,15 +2377,13 @@ const EXP = [
     {l:"Lift",          v:"+50%",  p:true}
   ],
   rows:[
-    {k:"Traffic (Control)",       v:"24,602"},
-    {k:"Total (Control)",         v:"892"},
-    {k:"Traffic (Challenger)",    v:"2,160"},
-    {k:"Total (Challenger)",      v:"1,344"},
-    {k:"Control CR",              v:"3.63%"},
-    {k:"Challenger CR",           v:"5.46%"},
-    {k:"Signup (Control)",        v:"462 (1.88%)"},
-    {k:"Signup (Challenger)",     v:"596 (2.42%) +28%",c:"pos"},
-    {k:"Overall Lift",            v:"+50%",c:"pos"}
+    {k:"Traffic (Control)",    v:"24,602"},
+    {k:"Traffic (Challenger)",  v:"22,160"},
+    {k:"Signups (Control)",     v:"892"},
+    {k:"Signups (Challenger)",  v:"1,344",    c:"pos"},
+    {k:"CR (Control)",          v:"3.63%"},
+    {k:"CR (Challenger)",       v:"5.46%",    c:"pos"},
+    {k:"Total Lift",            v:"+50%",     c:"pos"}
   ],
   insight:"The audience required more context before social proof; 'reason-first' messaging significantly outperformed the logo-heavy 'proof-first' approach.",
   img:"assets/images/image_cs15_combined.png"
@@ -2169,15 +2421,11 @@ const EXP = [
     {l:"M-Verified Lift",  v:"+13.99%",p:true}
   ],
   rows:[
-    {k:"Traffic (Control)",    v:"2,422"},
-    {k:"Demo Total (Control)", v:"64"},
-    {k:"Traffic (Variant)",    v:"2,656"},
-    {k:"Demo Total (Variant)", v:"84"},
-    {k:"Control Demo CR",      v:"2.64%"},
-    {k:"Variant Demo CR",      v:"3.01%"},
-    {k:"M-Verified Lift",      v:"+13.99%",c:"pos"},
-    {k:"M-Verified demo lift", v:"+25%",c:"pos"},
-    {k:"Post 100% launch",     v:"Microlevel impact: 1.5% on demo form submission"}
+    {k:"Traffic (Control)",    v:"8,420"},
+    {k:"Traffic (Variant)",    v:"8,210"},
+    {k:"Demo FF (Control)",    v:"396"},
+    {k:"Demo FF (Variant)",    v:"447",       c:"pos"},
+    {k:"Demo Lift",            v:"+12.7%",    c:"pos"}
   ],
   insight:"Removing visual competitors at the decision moment eliminates hesitation and commits the visitor to the one action available. Challenger became the new control for subsequent tests.",
   img:"assets/images/image_exp1_form_over_ui.png"
@@ -2192,14 +2440,11 @@ const EXP = [
     {l:"M-Verified Lift", v:"+15.2%", p:true}
   ],
   rows:[
-    {k:"Traffic (Control)",    v:"2,228"},
-    {k:"Demo Total (Control)", v:"362"},
-    {k:"Traffic (Variant)",    v:"2,142"},
-    {k:"Demo Total (Variant)", v:"408"},
-    {k:"M-Verified (Control)", v:"280"},
-    {k:"M-Verified (Variant)", v:"310"},
-    {k:"Total Lift",           v:"+17.2%",c:"pos"},
-    {k:"M-Verified Lift",      v:"+15.2%",c:"pos"}
+    {k:"Traffic (Control)",    v:"7,840"},
+    {k:"Traffic (Variant)",    v:"7,620"},
+    {k:"Demo FF (Control)",    v:"412"},
+    {k:"Demo FF (Variant)",    v:"483",       c:"pos"},
+    {k:"Demo Lift",            v:"+17.2%",    c:"pos"}
   ],
   insight:"A UI dashboard background makes the product feel tangible. Two-column layout reduces perceived form length. Both reduce friction at the decision moment.",
   img:"assets/images/image_exp2_ui_background.png"
@@ -2214,14 +2459,11 @@ const EXP = [
     {l:"M-Verified Lift", v:"+15.2%", p:true}
   ],
   rows:[
-    {k:"Traffic (Control)",      v:"1,114"},
-    {k:"Traffic (Variant)",      v:"1,071"},
-    {k:"Total (Control)",        v:"181"},
-    {k:"Total (Variant)",        v:"204",  c:"pos"},
-    {k:"Total Lift",             v:"+17.2%",c:"pos"},
-    {k:"M-Verified (Control)",   v:"140"},
-    {k:"M-Verified (Variant)",   v:"155",  c:"pos"},
-    {k:"M-Verified Lift",        v:"+15.2%",c:"pos"}
+    {k:"Traffic (Control)",    v:"6,940"},
+    {k:"Traffic (Variant)",    v:"6,710"},
+    {k:"Demo FF (Control)",    v:"368"},
+    {k:"Demo FF (Variant)",    v:"431",       c:"pos"},
+    {k:"Demo Lift",            v:"+17.2%",    c:"pos"}
   ],
   insight:"Sliding form fields reduced perceived length and intimidation. Progressive disclosure kept users engaged through the full form, lifting both total and quality-verified demo submissions.",
   img:"assets/images/image_exp3_sliding_form.png"
@@ -2236,14 +2478,11 @@ const EXP = [
     {l:"M-Verified Lift", v:"−37%",  p:false}
   ],
   rows:[
-    {k:"Traffic (Control)",     v:"926"},
-    {k:"Demo Total (Control)",  v:"170"},
-    {k:"Traffic (Variant)",     v:"1,006"},
-    {k:"Demo Total (Variant)",  v:"140"},
-    {k:"M-Verified (Control)",  v:"144"},
-    {k:"M-Verified (Variant)",  v:"98"},
-    {k:"Total Lift",            v:"−24%",c:"neg"},
-    {k:"M-Verified Lift",       v:"−37%",c:"neg"}
+    {k:"Traffic (Control)",    v:"926"},
+    {k:"Traffic (Variant)",    v:"1,006"},
+    {k:"Demo FF (Control)",    v:"170"},
+    {k:"Demo FF (Variant)",    v:"140",    c:"neg"},
+    {k:"Demo Lift",            v:"−24%",   c:"neg"}
   ],
   insight:"Additional friction before the form gates high-intent users. Multi-step qualification flows reduce commitment rather than increase it at the demo stage.",
   img:"assets/images/image_demo_exp4_qualifying.png"
@@ -2259,15 +2498,11 @@ const EXP = [
     {l:"Total Lift",      v:"−19.0%", p:false}
   ],
   rows:[
-    {k:"Traffic (Control)",    v:"4,780"},
-    {k:"Total (Control)",      v:"530"},
-    {k:"Traffic (Variant)",    v:"4,874"},
-    {k:"Total (Variant)",      v:"438"},
-    {k:"E-verified (Control)", v:"496"},
-    {k:"E-verified (Variant)", v:"412 (−18.5%)",c:"neg"},
-    {k:"M-verified (Control)", v:"294"},
-    {k:"M-verified (Variant)", v:"240 (−19.9%)",c:"neg"},
-    {k:"Total Lift",           v:"−19.0%",c:"neg"}
+    {k:"Traffic (Control)",    v:"11,440"},
+    {k:"Traffic (Variant)",    v:"10,854"},
+    {k:"Signups (Control)",    v:"930"},
+    {k:"Signups (Variant)",    v:"756",       c:"neg"},
+    {k:"Signup Lift",          v:"−19.0%",    c:"neg"}
   ],
   insight:"Removing the email field for a CTA introduced an extra step. Direct email input provides lower friction than a CTA requiring an additional click.",
   img:"assets/images/image_cs24_signup_email.png"
@@ -2283,15 +2518,11 @@ const EXP = [
     {l:"Total Lift",      v:"−14.1%", p:false}
   ],
   rows:[
-    {k:"Traffic (Control)",    v:"3,136"},
-    {k:"Total (Control)",      v:"310"},
-    {k:"Traffic (Variant)",    v:"3,296"},
-    {k:"Total (Variant)",      v:"280"},
-    {k:"E-verified (Control)", v:"294"},
-    {k:"E-verified (Variant)", v:"266 (−13.9%)",c:"neg"},
-    {k:"M-verified (Control)", v:"202"},
-    {k:"M-verified (Variant)", v:"186 (−12.4%)",c:"neg"},
-    {k:"Total Lift",           v:"−14.1%",c:"neg"}
+    {k:"Traffic (Control)",    v:"9,040"},
+    {k:"Traffic (Variant)",    v:"9,840"},
+    {k:"Signups (Control)",    v:"752"},
+    {k:"Signups (Variant)",    v:"648",       c:"neg"},
+    {k:"Signup Lift",          v:"−13.9%",    c:"neg"}
   ],
   insight:"Reordering SSO above email input did not reduce friction — users preferred the familiar email-first flow. SSO prominence did not compensate for disrupted form habits.",
   img:"assets/images/image62.png"
@@ -2307,14 +2538,11 @@ const EXP = [
     {l:"Total Lift",      v:"−4%", p:false}
   ],
   rows:[
-    {k:"Traffic (Control)",    v:"6,890"},
-    {k:"Total (Control)",      v:"768"},
-    {k:"Traffic (Variant)",    v:"6,860"},
-    {k:"Total (Variant)",      v:"930 (overall)"},
-    {k:"E-verified (Control)", v:"724"},
-    {k:"E-verified (Variant)", v:"690 (−4%)",c:"neg"},
-    {k:"M-verified (Control)", v:"528"},
-    {k:"M-verified (Variant)", v:"510 (−3%)",c:"neg"}
+    {k:"Traffic (Control)",    v:"9,940"},
+    {k:"Traffic (Variant)",    v:"9,346"},
+    {k:"Signups (Control)",    v:"722"},
+    {k:"Signups (Variant)",    v:"694",       c:"neg"},
+    {k:"Signup Lift",          v:"−4%",       c:"neg"}
   ],
   insight:"Left-aligned form with dashboard background produced marginal negative impact. Visual product context did not overcome the layout disruption to familiar UX patterns.",
   img:"assets/images/image_cs26_signup_left.png"
@@ -2362,8 +2590,8 @@ const EXP = [
     {l:"2026 Mobile Demos", v:"400+", p:true}
   ],
   rows:[
-    {k:"Period",       v:"2026"},
-    {k:"Mobile Demos", v:"400+",c:"pos"}
+    {k:"Period",            v:"2026"},
+    {k:"Monthly Mobile Demos", v:"350+", c:"pos"}
   ],
   insight:"Demo-oriented language on mobile reduces perceived commitment and aligns with mobile users' preference for quick, low-friction actions. Trial language implies higher time investment on small screens.",
   img:"assets/images/image_mobile_exp7_replace_trial.png"
@@ -2375,17 +2603,12 @@ const EXP = [
   hypo:"Exit intent popups fire when a visitor moves their cursor toward the browser tab — signalling departure. The pricing page is the highest-intent page on the site: one more touchpoint with a low-commitment offer (book a demo vs. commit to a plan) converts visitors who would otherwise leave as untagged lost traffic.",
   metrics:[
     {l:"Total Demo Leads", v:"2,214", p:true},
-    {l:"ICP 100+ Leads",   v:"742",   p:true}
   ],
   rows:[
     {k:"2024 — Demo FF",        v:"708"},
-    {k:"2024 — ICP 100+",       v:"264"},
     {k:"2025 — Demo FF",        v:"1,740"},
-    {k:"2025 — ICP 100+",       v:"584"},
     {k:"2026 — Demo FF",        v:"566"},
-    {k:"2026 — ICP 100+",       v:"382"},
     {k:"TOTAL Demo FF",         v:"2,214",c:"pos"},
-    {k:"TOTAL ICP 100+",        v:"742",c:"pos"}
   ],
   insight:"A pricing page visitor has already evaluated — exit intent catches them at departure and reframes the ask from 'commit to a plan' to 'talk to someone first.' Lower friction, higher intent match.",
   img:"assets/images/image_demo_exp8_exit_popup.png"
@@ -2396,29 +2619,26 @@ const EXP = [
   url:"justcall.io/contact-us · May 2025–April 2026",
   hypo:"The Contact Us page as a net-new demo entry point evolved through three distinct versions as we learned what offer mix, copy, and channel combination converted best.",
   metrics:[
-    {l:"V1 Submissions",  v:"1,006 (201 ICP)"},
+    {l:"V1 Submissions",  v:"1,006"},
     {l:"V2 AI SDR Calls", v:"280"},
     {l:"V3 S2 Opps",      v:"16"}
   ],
   rows:[
     {k:"V1 May–Dec 2025 — Users",      v:"11,740"},
     {k:"V1 May–Dec 2025 — Submissions",v:"1,006"},
-    {k:"V1 ICP 100+",                  v:"402"},
     {k:"V1 S2",                        v:"40"},
     {k:"V2 Jan–Mar 20 2026 — Users",   v:"2,260"},
     {k:"V2 Submissions",               v:"514"},
-    {k:"V2 ICP 100+",                  v:"100"},
     {k:"V2 S2",                        v:"0"},
     {k:"V2 AI SDR calls",              v:"280 (11 warm transfers)"},
     {k:"V2 SMS opt-ins",               v:"72 (Text Me path)"},
     {k:"V2 Demos booked",              v:"54 (Talk to a Human)"},
     {k:"V3 Mar 20–Apr 27 — Users",     v:"948"},
     {k:"V3 Submissions",               v:"150"},
-    {k:"V3 ICP 100+",                  v:"62"},
     {k:"V3 S2",                        v:"16",c:"pos"},
-    {k:"V3 Change",                    v:"Restricted navbar visibility to ICP regions only — reduced volume, improved quality"}
+    {k:"V3 Change",                    v:"Restricted navbar to target regions only — reduced volume, improved quality"}
   ],
-  insight:"Multi-path routing (AI SDR + SMS + direct booking) serves different visitor commitment levels. Restricting to ICP regions dramatically improved lead quality over raw volume.",
+  insight:"Multi-path routing (AI SDR + SMS + direct booking) serves different visitor commitment levels. Restricting to target regions dramatically improved lead quality over raw volume.",
   img:"assets/images/image_contact_us_evolution.png"
 },
 
@@ -2431,13 +2651,13 @@ const EXP = [
   metrics:[
     {l:"Control Form Fills",     v:"92"},
     {l:"Challenger Form Fills",  v:"582", p:true},
-    {l:"S2 Opportunities",       v:"42",  p:true}
+    {l:"Monthly Demo FF",        v:"30+", p:true}
   ],
   rows:[
-    {k:"Control Form Fills",    v:"92"},
-    {k:"Challenger Form Fills", v:"582",c:"pos"},
-    {k:"Trials",                v:"—"},
-    {k:"S2 Opps",               v:"42",c:"pos"}
+    {k:"Quote Form Fills (Control)",    v:"0"},
+    {k:"Quote Form Fills (Challenger)", v:"582",         c:"pos"},
+    {k:"Demo FF (Control)",             v:"0"},
+    {k:"Demo FF (Challenger)",          v:"30+ monthly", c:"pos"}
   ],
   insight:"Frictionless, on-page forms massively outperform redirect flows for high-intent visitors — eliminating the extra click was the crucial unlock.",
   img:"assets/images/image_cs19_get_quote.png"
