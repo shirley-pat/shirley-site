@@ -6,7 +6,7 @@
   <title>Shirley Patrick · CRO & Growth Portfolio 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --sys: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1052,266 +1052,49 @@
     /* ══════════════════════════════════════════════════════════ */
 
   
-    #intro-overlay {
-      position: fixed; inset: 0; z-index: 9999;
-      background: #0a0a0a;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      pointer-events: all;
-      overflow: hidden;
+    /* ══ BLUR TEXT LOADER ══════════════════════════════════════════ */
+    #brick-loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      z-index: 9999;
     }
-    #intro-overlay.exit {
-      transform: translateY(-100%);
-      transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+    #brick-loader.out {
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.7s ease;
     }
-    .intro-line {
-      overflow: hidden;
-      margin: 0;
+    .loading-text {
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      margin: auto;
+      text-align: center;
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
     }
-    .intro-name {
+    .loading-text span {
+      display: inline-block;
+      margin: 0 5px;
+      color: #FFF48D;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(40px, 8vw, 100px);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: #F5F5F0;
-      display: block;
-      transform: translateY(100%);
-      opacity: 0;
-      line-height: 1.05;
+      font-weight: 800;
+      font-size: 44px;
+      letter-spacing: -0.025em;
     }
-    .intro-name em {
-      font-style: normal;
-      color: var(--primary, #FFF48D);
+    .loading-text span:nth-child(1) { filter: blur(0px); animation: blur-text 1.5s 0s   infinite linear alternate; }
+    .loading-text span:nth-child(2) { filter: blur(0px); animation: blur-text 1.5s 0.2s  infinite linear alternate; }
+    .loading-text span:nth-child(3) { filter: blur(0px); animation: blur-text 1.5s 0.4s  infinite linear alternate; }
+    .loading-text span:nth-child(4) { filter: blur(0px); animation: blur-text 1.5s 0.6s  infinite linear alternate; }
+    .loading-text span:nth-child(5) { filter: blur(0px); animation: blur-text 1.5s 0.8s  infinite linear alternate; }
+    .loading-text span:nth-child(6) { filter: blur(0px); animation: blur-text 1.5s 1.0s  infinite linear alternate; }
+    .loading-text span:nth-child(7) { filter: blur(0px); animation: blur-text 1.5s 1.2s  infinite linear alternate; }
+    @keyframes blur-text {
+      0%   { filter: blur(0px); }
+      100% { filter: blur(4px); }
     }
-    .intro-name.in {
-      transform: translateY(0);
-      opacity: 1;
-      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-                  opacity 0.5s ease;
-    }
-    .intro-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: clamp(10px, 1.2vw, 13px);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(245,245,240,0.4);
-      margin-top: 1.5rem;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .intro-tag.in { opacity: 1; transform: translateY(0); }
-    .intro-bar {
-      position: absolute; bottom: 0; left: 0;
-      height: 2px;
-      background: var(--primary, #FFF48D);
-      width: 0%;
-      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .intro-bar.in { width: 100%; }
-    
-    /* ══════════════════════════════════════════════════════════ */
-
-  
-    
-
-    #intro {
-      position: fixed; inset: 0; z-index: 9999;
-      background: #0a0a0a;
-      display: flex; align-items: flex-end; justify-content: space-between;
-      padding: 3rem;
-      pointer-events: all;
-    }
-
-    /* Two vertical panels that split apart */
-    #intro-left, #intro-right {
-      position: absolute; top: 0; bottom: 0;
-      width: 50%; background: #0a0a0a;
-      transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
-      z-index: 1;
-    }
-    #intro-left  { left: 0; }
-    #intro-right { right: 0; }
-    #intro.split #intro-left  { transform: translateX(-100%); }
-    #intro.split #intro-right { transform: translateX(100%); }
-
-    /* Counter */
-    #intro-count {
-      position: absolute; bottom: 3rem; left: 3rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: clamp(60px, 12vw, 140px);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      color: #F5F5F0;
-      z-index: 2;
-      user-select: none;
-    }
-
-    /* Name top-left */
-    #intro-name {
-      position: absolute; top: 3rem; left: 3rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(245,245,240,0.35);
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    #intro-name.show { opacity: 1; }
-
-    /* Role top-right */
-    #intro-role {
-      position: absolute; top: 3rem; right: 3rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(245,245,240,0.35);
-      z-index: 2; text-align: right;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    #intro-role.show { opacity: 1; }
-
-    /* Accent line bottom-right */
-    #intro-line {
-      position: absolute; bottom: 3rem; right: 3rem;
-      z-index: 2;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: clamp(60px, 12vw, 140px);
-      line-height: 1; letter-spacing: -0.04em;
-      color: var(--primary, #FFF48D);
-      opacity: 0; transition: opacity 0.3s ease;
-    }
-    #intro-line.show { opacity: 1; }
-
-    @media (prefers-reduced-motion: reduce) {
-      #intro { display: none; }
-      body.intro-active { overflow: auto; }
-    }
-    /* ══════════════════════════════════════════════════════════ */
-
-    #intro {
-      position: fixed; inset: 0; z-index: 9999;
-      background: #0d2828;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 2.5rem;
-    }
-    .intro-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: clamp(32px, 6vw, 72px);
-      letter-spacing: -0.03em; color: #F5F5F0;
-      opacity: 0; transform: translateY(12px);
-      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1);
-    }
-    .intro-logo em { font-style: normal; color: var(--primary, #FFF48D); }
-    .intro-logo.show { opacity: 1; transform: translateY(0); }
-    .intro-progress-track {
-      width: 200px; height: 1px;
-      background: rgba(245,245,240,.12);
-      position: relative; overflow: hidden;
-      opacity: 0; transition: opacity 0.3s ease 0.3s;
-    }
-    .intro-progress-track.show { opacity: 1; }
-    .intro-progress-fill {
-      position: absolute; inset: 0; left: 0;
-      background: var(--primary, #FFF48D);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .intro-progress-fill.go { transform: scaleX(1); }
-    /* Curtain wipes up */
-    #intro.exit {
-      transform: translateY(-100%);
-      transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      #intro { display: none; }
-      body.intro-active { overflow: auto; }
-    }
-    /* ══════════════════════════════════════════════════════════ */
-
-    #intro {
-      position: fixed; inset: 0; z-index: 9999;
-      background: #0a0a0a;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 2rem;
-    }
-    #intro.exit {
-      transform: translateY(-100%);
-      transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-    .intro-line { overflow: hidden; }
-    .intro-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(36px, 7vw, 80px);
-      font-weight: 700; letter-spacing: -0.04em;
-      color: #F5F5F0; display: block;
-      transform: translateY(110%); opacity: 0;
-      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
-    }
-    .intro-name em { font-style: normal; color: #FFF48D; }
-    .intro-name.in { transform: translateY(0); opacity: 1; }
-    .intro-sub {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(245,245,240,0.35);
-      opacity: 0; transform: translateY(8px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .intro-sub.in { opacity: 1; transform: translateY(0); }
-    .intro-track {
-      width: 180px; height: 1px;
-      background: rgba(245,245,240,0.1); position: relative; overflow: hidden;
-      opacity: 0; transition: opacity 0.3s ease 0.3s;
-    }
-    .intro-track.in { opacity: 1; }
-    .intro-fill {
-      position: absolute; inset: 0;
-      background: #FFF48D;
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 1.5s cubic-bezier(0.22,1,0.36,1);
-    }
-    .intro-fill.go { transform: scaleX(1); }
-    @media (prefers-reduced-motion: reduce) {
-      #intro { display: none !important; }
-      
-    }
-    /* ══════════════════════════════════════════════════════════ */
-
-    #loader {
-      position: fixed; inset: 0; z-index: 9999;
-      background: #151410;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 2rem;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
-    #loader.hide { opacity: 0; visibility: hidden; }
-    .loader-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: clamp(28px, 5vw, 56px);
-      letter-spacing: -0.04em; color: #fff; text-align: center;
-    }
-    .loader-logo em { font-style: normal; color: #FFF48D; }
-    .loader-tags {
-      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
-    }
-    .loader-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5);
-      padding: 5px 14px; border-radius: 100px;
-      opacity: 0; transform: translateY(8px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    .loader-tag.in { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) {
-      #loader { display: none; }
-      body.loading { overflow: auto; }
-    }
-    /* ══════════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) { #brick-loader { display: none; } }
+    /* ══════════════════════════════════════════════════════════════ */
 
   
     /* ══ ABOUT SECTION ═════════════════════════════════════════ */
@@ -1564,17 +1347,20 @@
 </head>
 <body>
 
-  <div class="loader-tags">
-    <span class="loader-tag" id="lt1">CRO</span>
-    <span class="loader-tag" id="lt2">Growth Marketing</span>
-    <span class="loader-tag" id="lt3">Experimentation</span>
+<div id="brick-loader">
+  <div class="loading-text">
+    <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span>
   </div>
 </div>
-
-  <div class="intro-line"><span class="intro-name" id="iN2"><em>PATRICK</em></span></div>
-  <div class="intro-sub" id="iSub">CRO &amp; Growth · 60+ Experiments</div>
-  <div class="intro-track" id="iTrack"><div class="intro-fill" id="iFill"></div></div>
-</div>
+<script>
+(function(){
+  var l=document.getElementById('brick-loader');
+  setTimeout(function(){
+    l.classList.add('out');
+    setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l);},700);
+  },2500);
+})();
+</script>
 
 
 
