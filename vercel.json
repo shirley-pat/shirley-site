@@ -5,10 +5,24 @@
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
     }
   ],
   "redirects": [
-    { "source": "/resume", "destination": "/assets/resume/Shirley_Patrick_Resume.pdf", "permanent": false }
+    {
+      "source": "/resume",
+      "destination": "/assets/resume/Shirley_Patrick_Resume.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/Shirley_Patrick_Resume.pdf",
+      "destination": "/assets/resume/Shirley_Patrick_Resume.pdf",
+      "permanent": false
+    }
   ]
 }
