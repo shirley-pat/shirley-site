@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 02 · Design system from test results</title>
+<meta name="description" content="Shirley Patrick · CRO & growth portfolio: case studies, the JustCall growth book, 39 experiments in full, and the CRO toolkit.">
+<meta property="og:title" content="Case 02 · Design system from test results">
+<meta property="og:description" content="Shirley Patrick · CRO & growth portfolio: case studies, the JustCall growth book, 39 experiments in full, and the CRO toolkit.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cg fill=%22%239C4A1C%22%3E%3Cellipse cx=%225%22 cy=%229%22 rx=%222.2%22 ry=%223%22/%3E%3Cellipse cx=%229.5%22 cy=%224.8%22 rx=%222.2%22 ry=%223%22/%3E%3Cellipse cx=%2214.5%22 cy=%224.8%22 rx=%222.2%22 ry=%223%22/%3E%3Cellipse cx=%2219%22 cy=%229%22 rx=%222.2%22 ry=%223%22/%3E%3Cpath d=%22M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=Inter:wght@400;500;600;700&amp;family=Caveat:wght@600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+.pal-copper,:root{--bg:#F6EFE6;--bg2:#FCF8F2;--ink:#1B130D;--dk:#2A1A10;--dk2:#3B2618;--on-dk:#F2E3D2;--on-dk2:#CDB297;--acc:#F2A65A;--acc-ink:#9C4A1C;--y:#F5C76A;--y2:#FBEBCB;--or:#EE8E9D;--br:#7A4A2A;--win:#2F6B00;--loss:#B3361E}
+.pal-nose{--bg:#F5F1EC;--bg2:#FBF8F4;--ink:#171210;--dk:#171210;--dk2:#271F1B;--on-dk:#EFE7E1;--on-dk2:#BFB3AB;--acc:#F59DB0;--acc-ink:#B0365A;--y:#F2A65A;--y2:#FBE5CC;--or:#D9844A;--br:#7A4A2A;--win:#2F6B00;--loss:#B3361E}
+.pal-collar{--bg:#F4F1EC;--bg2:#FBF9F5;--ink:#13151D;--dk:#1C3FB0;--dk2:#2A4EC4;--on-dk:#E8EDFF;--on-dk2:#BFCBF5;--acc:#FFC27A;--acc-ink:#1C3FB0;--y:#FFD66B;--y2:#FFF1C9;--or:#EE8E9D;--br:#7A4A2A;--win:#2F6B00;--loss:#B3361E}
+.pal-green{--bg:#F4F3EF;--bg2:#FBFAF7;--ink:#14140F;--dk:#013900;--dk2:#024A00;--on-dk:#D6E5C8;--on-dk2:#A9C29A;--acc:#B6FE00;--acc-ink:#3F7A00;--y:#FFDC13;--y2:#FFF7D6;--or:#FA8005;--br:#754402;--win:#2F6B00;--loss:#B84A00}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);transition:color .2s}a:hover{color:var(--acc-ink)}
+img{display:block;max-width:100%}
+.w{max-width:1280px;margin:0 auto;padding:0 40px;box-sizing:border-box;width:100%}
+.d{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;text-transform:uppercase;line-height:.86;letter-spacing:-.005em;margin:0}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.hand{font-family:Caveat,cursive;font-weight:700}
+.hl{background:linear-gradient(transparent 58%,var(--acc) 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .04em}
+.stop{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--br)}
+.stop svg{width:22px;height:22px;fill:currentColor;transform:rotate(-16deg);flex:0 0 22px}
+.stop::after{content:"";flex:1;border-top:2px dashed currentColor;opacity:.45}
+.bub{position:absolute;background:#FFFFFF;color:var(--ink);border:2px solid var(--ink);border-radius:20px;padding:9px 16px 11px;font-family:Caveat,cursive;font-weight:700;font-size:26px;line-height:1.02;box-shadow:4px 5px 0 var(--ink);z-index:6;width:max-content;max-width:250px}
+.bub::after{content:"";position:absolute;width:16px;height:16px;background:#FFFFFF;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);bottom:-10px;left:34px;transform:rotate(45deg)}
+.bub.r::after{left:auto;right:34px}
+.stick{filter:drop-shadow(0 18px 22px rgba(20,20,15,.28));height:auto}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--dk);color:var(--acc);text-decoration:none;border-radius:999px;padding:17px 26px;font-weight:700;font-size:16px;border:2px solid var(--dk);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);color:var(--acc)}
+.btn.ghost{background:transparent;color:var(--dk)}
+.btn.lime{background:var(--acc);color:var(--dk);border-color:var(--acc)}
+.btn.lime:hover{color:var(--dk)}
+.btn.out{background:transparent;color:var(--bg);border-color:var(--bg)}
+.btn.out:hover{color:var(--bg)}
+.sec{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){.sec{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 30%}}
+
+/* nav */
+.nav{position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:20px;background:color-mix(in srgb,var(--dk) 94%,transparent);backdrop-filter:blur(10px);color:var(--bg);border-radius:999px;padding:7px 7px 7px 22px;white-space:nowrap;box-shadow:0 16px 40px -18px rgba(0,0,0,.6)}
+.nav a{color:var(--bg);text-decoration:none;font-size:14px}
+.nav a:hover{color:var(--acc)}
+.nav .brand{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;text-transform:uppercase;font-size:18px;letter-spacing:.01em}
+.navlinks{display:flex;gap:18px}
+.avail{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--on-dk)}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 20%,transparent)}
+.nav .resbtn{background:var(--acc);color:var(--dk);border-radius:999px;padding:11px 18px;font-weight:700}
+.nav .resbtn:hover{color:var(--dk)}
+
+.gsec{display:flex;flex-direction:column;gap:32px}
+.dark-band{background:var(--dk);color:var(--bg);padding:100px 0}
+.gh2{font-size:clamp(44px,5.2vw,84px);line-height:.9}
+.glede{margin:0;font-size:20px;line-height:1.55;color:#3B3B34;max-width:760px}
+.dark-band .glede{color:var(--on-dk)}
+.gsrc{margin:0;font-size:12px;line-height:1.5;font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
+.gstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.gst{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:22px;background:var(--bg2);box-shadow:inset 0 0 0 1.5px rgba(20,20,15,.1)}
+.dark-band .gst{background:var(--dk2);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 25%,transparent)}
+.gst-n{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:clamp(48px,4.4vw,72px);line-height:.85;color:var(--acc-ink)}
+.dark-band .gst-n{color:var(--acc)}
+.gst-t{font-size:15px;line-height:1.45}
+.g2{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:22px;background:var(--bg2);box-shadow:inset 0 0 0 1.5px rgba(20,20,15,.1)}
+.dark-band .card{background:var(--dk2);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 25%,transparent)}
+.card h3{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:30px;line-height:.95;text-transform:uppercase}
+.card p{margin:0;font-size:15px;line-height:1.55}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--br)}
+.dark-band .kick{color:var(--acc)}
+.cm{display:flex;flex-direction:column;gap:10px;padding:24px 26px;border-radius:22px;background:var(--y2)}
+.cm ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px}
+.cm li{font-size:16px;line-height:1.55;color:#2A2622}
+.ich,.hch{margin:0;display:flex;flex-direction:column;gap:16px;padding:26px;border-radius:22px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px rgba(20,20,15,.1)}
+.iplot{display:flex;gap:40px;align-items:flex-end;height:260px;padding-top:28px;border-bottom:1.5px solid rgba(20,20,15,.35)}
+.ig{flex:1 1 0;display:flex;flex-direction:column;align-items:center;height:100%;position:relative}
+.ipair{display:flex;gap:2px;align-items:flex-end;height:100%;width:100%;max-width:200px;justify-content:center}
+.ib{position:relative;width:46%;max-width:70px;border-radius:4px 4px 0 0;transition:filter .2s}
+.ib:hover{filter:brightness(1.12)}
+.iv{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:20px;color:#1B130D;white-space:nowrap}
+.il{position:absolute;bottom:-28px;font-size:13px;color:#3B3B34;white-space:nowrap}
+.lg{display:flex;gap:18px;margin-top:40px;font-size:13px;color:#3B3B34}
+.lg span{display:inline-flex;align-items:center;gap:8px}
+.lg i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.hb{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 84px;gap:14px;align-items:center}
+.hb-l{font-size:14px;line-height:1.3;color:#3B3B34}
+.hb-t{height:26px;background:#F1EDE6;border-radius:4px;overflow:hidden}
+.hb-f{height:100%;border-radius:0 4px 4px 0}
+.hb-v{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:22px;color:#1B130D;text-align:right}
+.gtable{width:100%;border-collapse:collapse;font-size:14px;background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:inset 0 0 0 1.5px rgba(20,20,15,.1)}
+.gtable th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--br);padding:14px 16px;border-bottom:1.5px solid rgba(20,20,15,.15);background:var(--bg2)}
+.gtable td{padding:14px 16px;border-bottom:1px solid rgba(20,20,15,.08);vertical-align:top;line-height:1.5}
+.gtable td.num{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:18px;white-space:nowrap}
+.gtable tr:last-child td{border-bottom:0}
+.tbox{overflow-x:auto;border-radius:18px}
+.shotf{border-radius:18px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 60px -32px rgba(0,0,0,.5)}
+.shotf img{width:100%;height:auto}
+.screens{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:start}
+.screens figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.screens img{width:100%;height:auto;border-radius:18px;box-shadow:0 26px 50px -28px rgba(0,0,0,.45)}
+.screens figcaption{font-size:13px;line-height:1.4;color:#3B3B34}
+.cover{background:var(--dk);color:var(--bg);padding:150px 0 90px;position:relative;overflow:hidden}
+.cover-dog{position:absolute;right:6%;bottom:-6px;width:min(26vw,320px)}
+.cover-dog .bub{left:-150px;top:-40px}
+.chap{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.chap .no{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:22px;color:var(--br)}
+.closing{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:clamp(28px,2.6vw,40px);line-height:1.05;color:var(--acc-ink);max-width:900px}
+.contact{background:var(--dk);color:var(--bg);position:relative;overflow:hidden;padding:120px 0 0}
+.gfoot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:26px 0 30px;border-top:1px solid color-mix(in srgb,var(--bg) 25%,transparent);color:var(--on-dk2);font-size:13px}
+@media (max-width:1000px){
+.gstats,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g2,.g3{grid-template-columns:minmax(0,1fr)}
+.screens{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+.w{padding:0 20px}
+.navlinks{display:none}
+.cover-dog{position:relative;right:auto;margin:40px 0 -90px auto;width:220px}
+.cover-dog .bub{left:-120px;top:-30px;font-size:22px}
+.hb{grid-template-columns:minmax(0,1fr) 72px}
+.hb-l{grid-column:1 / -1}
+.iplot{gap:20px}
+}
+@media (max-width:560px){
+.gstats,.g4,.screens{grid-template-columns:minmax(0,1fr)}
+}
+
+
+.cw{max-width:1200px;margin:0 auto;padding:0 40px;box-sizing:border-box;width:100%}
+.cmain{display:flex;flex-direction:column;gap:120px;padding:110px 0 0}
+.lbl{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--br)}
+.stop .lbl{color:inherit}
+.h2{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;text-transform:uppercase;font-size:clamp(40px,4.6vw,68px);line-height:.92;letter-spacing:-.005em;margin:0;max-width:960px}
+.body{margin:0;font-size:17px;line-height:1.62;color:#3B3B34;max-width:780px}
+.c{background:var(--bg2);border-radius:22px;padding:26px;box-sizing:border-box;box-shadow:inset 0 0 0 1.5px rgba(20,20,15,.1);display:flex;flex-direction:column;gap:10px}
+.c .t{font-weight:700;font-size:18px;line-height:1.3}
+.c .s{font-size:14px;line-height:1.55;color:#4A4A42}
+.big{font-family:'Bricolage Grotesque',sans-serif;font-stretch:75%;font-weight:800;font-size:clamp(34px,3.4vw,48px);line-height:.95;color:var(--acc-ink)}
+.grid{display:grid;gap:16px}
+.g-auto{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;align-items:start}
+.g-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.pin{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--dk);font-size:13px;font-weight:800;flex:0 0 30px;font-family:'JetBrains Mono',monospace}
+.pins{display:flex;flex-direction:column;gap:12px}
+.pins>div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5}
+.ref{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:inset 0 0 0 1.5px rgba(20,20,15,.14);transition:background .2s}
+a.ref:hover{background:var(--acc);color:var(--dk)}
+.refs{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:999px;border:1.5px solid currentColor}
+.tag.win{color:var(--win)}.tag.loss{color:var(--loss)}.tag.learn{color:var(--br)}
+.shot{display:block;width:100%;border-radius:18px;background:#FFFFFF;box-shadow:0 26px 60px -34px rgba(42,26,16,.55),0 0 0 1.5px rgba(20,20,15,.08)}
+.scroll{overflow-y:auto;border-radius:18px;background:#FFFFFF;box-shadow:0 26px 60px -34px rgba(42,26,16,.55),0 0 0 1.5px rgba(20,20,15,.08)}
+.scroll img{display:block;width:100%}
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.hyp{background:var(--y);border-radius:28px;padding:48px;display:flex;flex-direction:column;gap:18px}
+.hyp .lbl{color:var(--dk)}
+.hyp p{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-stretch:87%;font-weight:600;font-size:clamp(22px,2.2vw,30px);line-height:1.28;color:var(--dk)}
+.hyp u{text-decoration:none;background:linear-gradient(transparent 60%,rgba(255,255,255,.7) 60%)}
+.hyp .ref{background:rgba(255,255,255,.55)}
+.learn{background:var(--y2);border-radius:28px;padding:40px;display:flex;flex-direction:column;gap:12px}
+.learn .t{font-family:'Bricolage Grotesque',sans-serif;font-stretch:80%;font-weight:800;font-size:28px;line-height:1.05}
+.learn p{margin:0;font-size:16px;line-height:1.6;color:#3B3B34;max-width:820px}
+.ccover{background:var(--dk);color:var(--bg);padding:130px 0 90px;position:relative;overflow:hidden}
+.ccover .lbl{color:var(--acc)}
+.ch1{font-size:clamp(48px,5.6vw,92px);line-height:.9;color:var(--bg);max-width:960px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.fact{background:var(--dk2);border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 22%,transparent)}
+.fact .lbl{color:var(--on-dk2)}
+.fact div{font-weight:600;font-size:15px;line-height:1.45;color:var(--on-dk)}
+.fact.hero{background:var(--acc)}
+.fact.hero .lbl{color:var(--dk)}
+.fact.hero .big{color:var(--dk)}
+.fact.hero div{color:var(--dk)}
+@media (min-width:901px){.ccover .facts,.ccover .csrc{max-width:calc(100% - 250px)}.ccover .ch1{max-width:calc(100% - 200px)}}
+.csrc{margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:#6A6A60}
+.ccover .csrc{color:var(--on-dk2)}
+.cdog{position:absolute;right:max(24px,calc((100vw - 1200px)/2 - 40px));bottom:0;width:min(17vw,230px);z-index:3}
+.cdog img{width:100%;display:block}
+.cdog .bub{top:-70px;right:40px}
+.ctable{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}
+.ctable th{text-align:left;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--br)}
+.ctable td{padding:14px 16px;border-top:1px solid rgba(20,20,15,.1);vertical-align:top}
+.ctable td.n{font-weight:700;white-space:nowrap}
+.next{display:flex;flex-wrap:nowrap;justify-content:space-between;gap:20px;align-items:center;padding:48px;border-radius:28px;background:var(--dk);color:var(--bg);text-decoration:none;transition:transform .3s}
+.next:hover{transform:translateY(-4px);color:var(--bg)}
+.next .lbl{color:var(--acc)}
+.next .d{font-size:clamp(32px,3.6vw,54px);line-height:.92;color:var(--bg);display:block;margin-top:12px}
+.next>span{flex:1 1 auto;min-width:0}.next img{width:120px;flex:0 0 120px}
+@media (max-width:640px){.next{flex-wrap:wrap}.next img{width:90px;flex-basis:90px}}
+.cfoot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:36px 0 50px;font-size:13px;color:#6A6A60}
+.navlinks a.on{color:var(--acc)}
+.swatch{width:36px;height:36px;border-radius:8px;display:inline-block}
+.morse{display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 10px;background:#FFFFFF;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(20,20,15,.08)}
+.morse .row{display:flex;gap:9px;align-items:center}
+.morse i{display:inline-block;height:12px;border-radius:6px;background:#0B1020}
+.morse i.dot{width:12px}.morse i.dash{width:38px}
+.morse i.blue{background:#004CE6}
+@media (max-width:900px){.cdog{display:none}.ccover{padding:110px 0 70px}.hyp,.learn,.next{padding:30px}}
+@media (max-width:640px){.cw{padding:0 22px}.navlinks{display:none}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div id="site-root"><div class="sc-host"><div class="pal-copper" style="min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; background: var(--bg); color: var(--ink);"><header style="position: sticky; top: 0px; height: 0px; z-index: 50;"><div class="nav"><a href="/" class="brand">← Shirley Patrick</a><nav aria-label="Case studies" class="navlinks"><a href="/cases/ppc/">01</a><a href="/cases/design-system/" class="on">02</a><a href="/cases/mobile-demo/">03</a><a href="/cases/exit-intent/">04</a><a href="/cases/kissflow/">05</a></nav><a href="/" class="resbtn">All work</a></div></header><section class="ccover" aria-label="Case header"><div class="cw" style="display: flex; flex-direction: column; gap: 28px; position: relative; z-index: 2;"><span class="lbl">Case 02 · JustCall · Brand refresh and design system · 2026</span><h1 class="d ch1">A design system built from four years of test results, <span style="color: var(--acc);">not taste.</span></h1><p style="margin: 0px; font-size: 19px; line-height: 1.55; color: var(--on-dk); max-width: 760px;">Every past experiment told us something about how a page should be structured. We turned those learnings into components, set them on UX principles, and built 10+ page templates from them, so every page starts from what already converted.</p><div class="facts"><div class="fact"><span class="lbl">My role</span><div>Design narrative and direction; managed the design team</div></div><div class="fact"><span class="lbl">Team</span><div>3 designers + freelancers</div></div><div class="fact"><span class="lbl">Shipped</span><div>10+ templates · 85 Figma components · Brand book 2.0 (Oct 2026)</div></div><div class="fact hero"><span class="lbl">Outcome</span><span class="big">4 days → 1 day</span></div></div><p class="csrc">Time to launch a page: every new page starts from a tested template, which freed the designers for campaign creative.</p></div><div class="cdog"><div class="bub r">Same nose, every page.</div><img class="stick" src="/assets/img/bruno-happy-sticker.webp" alt="Bruno sitting, tongue out"></div></section><main class="cw cmain"><section aria-label="The problem" style="display: flex; flex-direction: column; gap: 16px;"><span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="5" cy="9" rx="2.2" ry="3"></ellipse><ellipse cx="9.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="14.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="19" cy="9" rx="2.2" ry="3"></ellipse><path d="M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z"></path></svg><span class="lbl">01 · The problem</span></span><h2 class="h2">Every page was a one-off, so every win <span class="hl">stayed on one page.</span></h2><p class="body">A test would prove something on the PPC pages, and the homepage, product pages and comparison pages would never get it. Each new page started from a blank canvas, looked a little different, and repeated mistakes we'd already paid for.</p></section><section aria-label="From test result to component" style="display: flex; flex-direction: column; gap: 20px;"><div style="display: flex; flex-direction: column; gap: 16px;"><span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="5" cy="9" rx="2.2" ry="3"></ellipse><ellipse cx="9.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="14.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="19" cy="9" rx="2.2" ry="3"></ellipse><path d="M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z"></path></svg><span class="lbl">02 · From test result to component</span></span><h2 class="h2">Each learning became a rule. <span class="hl">Each rule, a component.</span></h2></div><div style="overflow-x: auto; border-radius: 22px; background: var(--bg2); box-shadow: rgba(20, 20, 15, 0.1) 0px 0px 0px 1.5px inset;"><table class="ctable"><thead><tr><th>What a test proved</th><th>Result</th><th>Rule in the system</th><th>Component</th></tr></thead><tbody><tr><td>No nav bar on PPC pages</td><td class="n">3.63% → 5.46%</td><td>Paid and competitor pages ship without the main nav</td><td>No-nav header</td></tr><tr><td>Embedded product tour</td><td class="n">2.09% → 3.67%</td><td>Show the product in the first two folds</td><td>Product tour fold</td></tr><tr><td>Social proof carousel</td><td class="n">3.45% → 4.26%</td><td>Proof sits right under the hero CTA</td><td>Proof band</td></tr><tr><td>G2 badges vs security logos</td><td class="n">5.0% → 6.1%</td><td>Compliance logos lead; review badges support (rerun before rollout)</td><td>Trust row</td></tr><tr><td>Rep vs manager persona picker</td><td class="n">2.64% → 3.39%</td><td>Pages with two buyers let each pick their view</td><td>Persona tabs</td></tr><tr><td>Reason-first vs proof-first on comparisons</td><td class="n">7.39% → 4.37% (loss)</td><td>Comparison pages lead with reasons; logos support</td><td>Comparison table fold</td></tr><tr><td>"Talk to a human" CTA</td><td class="n">6.70% → 10.93%</td><td>Demo CTAs promise a person, not a form</td><td>CTA library</td></tr></tbody></table></div><p class="csrc">Results from JustCall A/B tests, as recorded in the experiment library.</p></section><section aria-label="Templates" style="display: flex; flex-direction: column; gap: 24px;"><div style="display: flex; flex-direction: column; gap: 16px;"><span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="5" cy="9" rx="2.2" ry="3"></ellipse><ellipse cx="9.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="14.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="19" cy="9" rx="2.2" ry="3"></ellipse><path d="M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z"></path></svg><span class="lbl">03 · 10+ templates, scaled across the site</span></span><h2 class="h2">A template for each page type, <span class="hl">sized to its traffic.</span></h2><p class="body">Pages with a lot of traffic get the full set of folds, because there's enough volume to test every one. Low-traffic pages get a shorter template that keeps only the folds that have already proven themselves. Every fold comes with written rules: what it's for, how much copy it takes, and when it's mandatory.</p></div><div class="grid g-2" style="align-items: center;"><figure><img class="shot" src="/assets/img/tpl-spec-detail.webp" alt="Template spec detail: hero, customer logos and social proof folds, each with its written rule"><figcaption class="lbl">How a fold is specified</figcaption></figure><div style="display: flex; flex-direction: column; gap: 14px;"><div class="c"><span class="lbl">How a fold is specified</span><div class="t">Hero fold</div><div class="s">Centre-aligned headline, full-width product screenshot. Mandatory on high-traffic pages.</div></div><div class="c"><span class="lbl">How a fold is specified</span><div class="t">Customer logos</div><div class="s">Straight under the hero, no headline. The logos earn trust before the first scroll.</div></div><div class="c"><span class="lbl">How a fold is specified</span><div class="t">Social proof</div><div class="s">Three stat cards and one quote, with word limits set for each.</div></div></div></div><div class="grid g-3" style="align-items: start;"><figure><div class="scroll" style="height: 760px;"><img src="/assets/img/tpl-solution-high.webp" alt="Solution page template for high-traffic pages, annotated fold by fold"></div><figcaption><span class="lbl">Solution page · high traffic</span><div class="s" style="font-size: 13px; color: rgb(106, 106, 96); margin-top: 4px;">Full fold set. Scroll to read.</div></figcaption></figure><figure><div class="scroll" style="height: 760px;"><img src="/assets/img/tpl-solution-low.webp" alt="Solution page template for low-traffic pages, annotated fold by fold"></div><figcaption><span class="lbl">Solution page · low traffic</span><div class="s" style="font-size: 13px; color: rgb(106, 106, 96); margin-top: 4px;">Shorter: benefits, one use case, one case study.</div></figcaption></figure><figure><div class="scroll" style="height: 760px;"><img src="/assets/img/tpl-product-high.webp" alt="Product page template for high-traffic pages, annotated fold by fold"></div><figcaption><span class="lbl">Product page · high traffic</span><div class="s" style="font-size: 13px; color: rgb(106, 106, 96); margin-top: 4px;">Built around Jobs-to-be-Done use-case folds.</div></figcaption></figure></div><p class="csrc">Three of the 10+ templates. The rest cover comparison, integration, industry and paid landing pages.</p><div class="grid g-auto"><div class="c"><span class="lbl">Pages built from templates</span><span class="big">45+</span></div><div class="c"><span class="lbl">Time to launch a page</span><span class="big">4 days → 1 day</span></div><div class="c"><span class="lbl">Vertical pages after rebuild</span><span class="big">+45% CR</span></div></div></section><section aria-label="Brand layer" style="display: flex; flex-direction: column; gap: 24px;"><div style="display: flex; flex-direction: column; gap: 16px;"><span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="5" cy="9" rx="2.2" ry="3"></ellipse><ellipse cx="9.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="14.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="19" cy="9" rx="2.2" ry="3"></ellipse><path d="M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z"></path></svg><span class="lbl">04 · The brand layer on top</span></span><h2 class="h2">Three parts, <span class="hl">each with one job.</span></h2></div><div class="grid g-3"><div class="c"><span class="lbl">Colour</span><div style="display: flex; gap: 6px;"><span class="swatch" style="background: rgb(0, 76, 230);"></span><span class="swatch" style="background: rgb(11, 16, 32);"></span><span class="swatch" style="background: rgb(122, 90, 248);"></span><span class="swatch" style="background: rgb(250, 112, 102);"></span></div><div class="s">Electric Blue is the global primary. Every accent has one role; anything not listed stays neutral.</div></div><div class="c"><span class="lbl">Type</span><div style="font-size: 40px; font-weight: 600; line-height: 1;">Aa</div><div class="s">Instrument Sans on every marketing surface, two weights only. "Precise enough to trust. Friendly enough to talk to."</div></div><div class="c"><span class="lbl">Morse pattern</span><div class="morse" role="img" aria-label="J and C in Morse on one centre axis, the final dot in Electric Blue"><div class="row"><i class="dot"></i><i class="dash"></i><i class="dash"></i><i class="dash"></i></div><div class="row"><i class="dash"></i><i class="dot"></i><i class="dash"></i><i class="dot blue"></i></div></div><div class="s">J and C spelled in Morse, two rows on one centre axis. The last dot is Electric Blue. One tile, anchored bottom-right, never over copy, a CTA or the logo.</div></div></div></section><section aria-label="Principles" style="display: flex; flex-direction: column; gap: 20px;"><span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="5" cy="9" rx="2.2" ry="3"></ellipse><ellipse cx="9.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="14.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="19" cy="9" rx="2.2" ry="3"></ellipse><path d="M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z"></path></svg><span class="lbl">05 · Five principles the team designs by</span></span><div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;"><div class="c"><div class="t">Say it in one breath</div><div class="s">Outcome up front, jargon out.</div></div><div class="c"><div class="t">Show, don't tell</div><div class="s">Real product on screen beats adjectives.</div></div><div class="c"><div class="t">Quiet stage, one spotlight</div><div class="s">Colour enters once, on purpose.</div></div><div class="c"><div class="t">Earn every claim</div><div class="s">Real customers, real numbers, cited.</div></div><div class="c"><div class="t">Built to repeat</div><div class="s">Shared components, not one-offs.</div></div></div></section><section aria-label="Component library" style="display: flex; flex-direction: column; gap: 20px;"><div style="display: flex; flex-direction: column; gap: 16px;"><span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="5" cy="9" rx="2.2" ry="3"></ellipse><ellipse cx="9.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="14.5" cy="4.8" rx="2.2" ry="3"></ellipse><ellipse cx="19" cy="9" rx="2.2" ry="3"></ellipse><path d="M12 10.5c-3.6 0-7 4-7 7.2 0 2 1.6 3.1 3.4 3.1 1.4 0 2.3-.8 3.6-.8s2.2.8 3.6.8c1.8 0 3.4-1.1 3.4-3.1 0-3.2-3.4-7.2-7-7.2z"></path></svg><span class="lbl">06 · The component library</span></span><h2 class="h2">85 Figma folds the templates <span class="hl">are assembled from.</span></h2></div><div class="grid g-3" style="align-items: start;"><figure><img class="shot" src="/assets/img/fold-hero.webp" alt="Hero fold: Every customer conversation. One intelligent platform."><figcaption class="lbl">Hero fold</figcaption></figure><figure><img class="shot" src="/assets/img/fold-compare.webp" alt="Comparison table fold: How JustCall compares for HubSpot teams"><figcaption class="lbl">Comparison fold</figcaption></figure><figure><div class="scroll" style="max-height: 420px;"><img src="/assets/img/fold-steps-mobile.webp" alt="Mobile steps fold: Give every support call a clear path"></div><figcaption class="lbl">Mobile steps fold</figcaption></figure></div></section><section class="learn" aria-label="Making it stick"><span class="lbl">07 · Making it stick</span><div class="t">The system lives inside Claude, as skills the team uses.</div><p>Template choice, component rules, brand checks and copy checks are written as Claude skills, so a designer or freelancer starts every page from what already converted. Every new page goes through them: pick the template, check the brand rules, check the copy, then hand off to build.</p></section><section class="grid g-2" aria-label="Before and after" style="gap: 24px;"><figure><div class="scroll" style="height: 540px;"><img src="/assets/img/home-2025-full.webp" alt="JustCall homepage, 2025"></div><figcaption class="lbl">Before · 2025</figcaption></figure><figure><div class="scroll" style="height: 540px;"><img src="/assets/img/home-2026-full.webp" alt="JustCall homepage, 2026"></div><figcaption class="lbl">After · 2026 refresh</figcaption></figure></section><section class="grid g-3" aria-label="Judgement"><div class="c"><span class="lbl">08 · What I chose not to change</span><p class="body" style="font-size: 15px;">The logo and the core brand colours. Buyers and customers already know them, so the system changed how pages are built, not how JustCall is recognised.</p></div><div class="c"><span class="lbl">09 · What's next</span><p class="body" style="font-size: 15px;">Brand book 2.0 is still in progress: motion and illustration rules, and lining up the website components with the product UI so the site and the app feel like one brand.</p></div></section><a href="/cases/mobile-demo/" class="next"><span><span class="lbl">Next case</span><span class="d">Mobile demo page: fewer taps to a booked demo →</span></span><img class="stick" src="/assets/img/bruno-walk-sticker.webp" alt=""></a><footer class="cfoot"><span>Case 02 of 05 · Every number on this page comes from a test I ran or a programme I owned.</span><span>© 2026 Shirley Patrick</span></footer></main></div></div></div>
+
+</body>
+</html>
